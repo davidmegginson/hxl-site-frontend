@@ -5,7 +5,7 @@ const Header = ({ data }) => (
   <header>
     <div className='primary-nav'>
       <div className='grid-container center--vertical'>
-        <a href='/' className='logo'><img src='/images/logo-hxl.svg' alt='' /></a>
+        <a href='/' className='logo'><img src='./images/logo-hxl.svg' alt='' /></a>
         <nav aria-labelledby="primary-navigation">
           { data.allWordpressWpApiMenusMenusItems.edges[0].node.items.map((item) => (
             <a href={item.url} key={item.title}>{item.title}</a>

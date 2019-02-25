@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 class Carousel extends React.Component {
   componentDidMount() {
-    this.isMobile = window.innerWidth > 767 ? false : true;
+    this.isMobile = false;//window.innerWidth > 767 ? false : true;
   }
 
   render() {

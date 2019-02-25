@@ -22,15 +22,15 @@ export default ({ data }) => {
         <h4 className='center'>The 30-second HXL Tutorial</h4>
         <div className='grid-container'>
           <div className='col-4 tutorial__step'>
-            <img src='/images/tutorial-1.png' alt='' />
+            <img src='./images/tutorial-1.png' alt='' />
             <h5><a href='/'><div className='bullet--number'><span>1</span></div>Grab a spreadsheet of humanitarian data</a></h5>
           </div>
           <div className='col-4 tutorial__step'>
-            <img src='/images/tutorial-2.png' alt='' />
+            <img src='./images/tutorial-2.png' alt='' />
             <h5><a href='/'><div className='bullet--number'><span>2</span></div>Insert a new row between the headers and the data</a></h5>
           </div>
           <div className='col-4 tutorial__step'>
-            <img src='/images/tutorial-3.png' alt='' />
+            <img src='./images/tutorial-3.png' alt='' />
             <h5><a href='/'><div className='bullet--number'><span>3</span></div>Add some HXL tags</a></h5>
           </div>
         </div>

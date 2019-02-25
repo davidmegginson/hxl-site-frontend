@@ -16,6 +16,7 @@
     "gatsby-source-wordpress": "^3.0.38",
     "gatsby-transformer-remark": "^2.2.6",
     "gatsby-transformer-sharp": "^2.1.14",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",

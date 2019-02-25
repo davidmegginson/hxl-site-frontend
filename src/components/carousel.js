@@ -5,8 +5,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 class Carousel extends React.Component {
+  constructor() {
+    super();
+    this.isMobile = false;
+  }
+
   componentDidMount() {
-    this.isMobile = false;//window.innerWidth > 767 ? false : true;
+    this.isMobile = window.innerWidth > 767 ? false : true;
   }
 
   render() {
@@ -18,6 +23,7 @@ class Carousel extends React.Component {
       responsive: this.props.responsive,
       centerMode: this.isMobile
     };
+    
     return (
       <div className='carousel-container'>
         <Slider {...settings}>

@@ -1,0 +1,25 @@
+$color__coral: #f26459;
+$color__coral-light: #FCF2F2;
+$color__gray-light: #f5f5f5;
+$color__gray-medium: #333;
+$color__white: #FFF;
+
+
+$system__site-width: 1170px;
+$system__unit: 16px !default;
+$system__font-size: 1rem;
+$system__line-height: $system__font-size * 1.20;
+$system__typescale: 1.333;
+$system__breakpoint--small: 767px;
+
+
+$type-scale: (
+  -1: 0.75rem,  //small text
+  0: 1rem,      //body text
+  1: 4.209rem,  //h1
+  2: 3.157rem,  //h2
+  3: 2.369rem,  //h3
+  4: 1.777rem,  //h4
+  5: 1.333rem,  //h5
+  6: 0.75rem    //h6
+);

@@ -1,0 +1,138 @@
+header {
+	a {
+		color: $color__gray-medium;
+		padding: 0 15px;
+		text-transform: uppercase;
+		&:last-child {
+			padding-right: 0;
+		}
+		&:hover {
+			color: $color__coral;
+		}
+	}
+	nav {
+		a {
+			border-right: 2px solid $color__gray-medium;
+			&:last-child {
+				border: 0;
+			}
+		}
+	}
+}
+
+.primary-nav {
+	background-color: $color__white;
+	.logo {
+		grid-column: 1 / span 3;
+		padding: 0;
+		img {
+			height: 30px;
+		}
+	}
+	nav {
+		align-items: center;
+		color: $color__gray-medium;
+		display: flex;
+		font-family: 'Gotham';
+		font-size: 14px;
+		line-height: 14px;
+		grid-column: 4 / span 9;
+		height: 60px;
+		margin-left: auto;
+	}
+}
+.secondary-nav {
+	background-color: #EEE;
+	border-top: 3px solid #CCC;
+	.breadcrumbs {
+		font-family: 'SourceSansPro';
+		font-size: 12px;
+		line-height: 23px;
+		grid-column: 1 / -1;
+		a {
+			border-width: 1px;
+			padding: 0 6px;
+			&.active {
+				font-weight: bold;
+			}
+		}
+	}
+}
+.tertiary-nav {
+	ul {
+		margin: 0;
+		padding: 0 0 25px 0;
+		li {
+			list-style-type: none;
+		}
+	}
+	h5 {
+		margin: 0;
+	}
+}
+
+.mobile-nav-toggle {
+	background-color: transparent;
+	border: 0;
+	display: none;
+	padding: 0;
+	position: fixed;
+	right: 30px;
+	top: 35px;
+	z-index: 2;
+	.icon-bar {
+    background-color: $color__gray-medium;
+    display: block;
+    height: system-unit(0.25);
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    width: system-unit(2);
+    & + .icon-bar {
+    	margin-top: system-unit(0.375);
+    }
+	}
+	&.expanded {
+		.icon-bar {
+			&:first-child {
+				position: absolute;
+		    top: 12px;
+		    -webkit-transform: rotate(45deg);
+		    -ms-transform: rotate(45deg);
+		    transform: rotate(45deg);
+			}
+			&:nth-child(2) {
+		    -webkit-transform: rotate(-45deg);
+		    -ms-transform: rotate(-45deg);
+		    transform: rotate(-45deg);
+		    position: absolute;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $system__breakpoint--small) {
+	.mobile-nav-toggle {
+		display: block;
+	}
+	.primary-nav {
+		border-bottom: 3px solid #ccc;
+		position: fixed;
+		width: 100%;
+		z-index: 1;
+		.logo {
+			padding: 25px 30px;
+		}
+		nav {
+			align-items: flex-start;
+			display: none;
+			flex-flow: column;
+			a {
+				border: 0;
+				padding: 0;
+			}
+		}
+	}
+	.secondary-nav {
+		display: none;
+	}
+}

@@ -11,7 +11,7 @@ class PostTemplate extends Component {
 
     return (
       <div>
-        <Header />
+        <Header page={post.title} />
         <div className='viewport-container'>
           <div className='grid-container'>
             <nav className='sidebar tertiary-nav' aria-labelledby="tertiary-navigation">

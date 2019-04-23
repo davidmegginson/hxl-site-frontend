@@ -10,7 +10,7 @@ exports.onCreateWebpackConfig = ({ actions, stage }) => {
 
 
 module.exports = {
-  pathPrefix: "/hxl-redesign",
+  pathPrefix: `/hxl-redesign`,
   siteMetadata: {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
@@ -47,7 +47,7 @@ module.exports = {
         * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
         * Example : 'gatsbyjswpexample.wordpress.com' or 'www.example-site.com'
         */
-        baseUrl: `hxl.local`,
+        baseUrl: `hxl2.local`,
         // The protocol. This can be http or https.
         protocol: `http`,
         // Indicates whether the site is hosted on wordpress.com.
@@ -57,7 +57,7 @@ module.exports = {
         hostingWPCOM: false,
         // If useACF is true, then the source plugin will try to import the WordPress ACF Plugin contents.
         // This feature is untested for sites hosted on WordPress.com
-        useACF: false,
+        useACF: true,
         verboseOutput: false,
         excludedRoutes: [
           "/wp/v2/users/me", 

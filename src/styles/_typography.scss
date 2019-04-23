@@ -41,8 +41,8 @@ h5 {
 }
 
 h6 {
-	font-size: type-scale(6);
-	line-height: 14px;
+	font-size: 14px;
+	line-height: 18px;
 	margin: 0;
 }
 
@@ -51,7 +51,7 @@ a {
 	text-decoration: none;
 	&.external {	
 		&:after {
-			background: url('/images/icon-external-link.png') no-repeat;
+			background: url('../assets/images/icon-external-link.png') no-repeat;
 			background-size: contain;
 			content: '';
 			display: inline-block;

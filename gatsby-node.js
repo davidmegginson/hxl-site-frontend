@@ -29,6 +29,7 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             id
+            date
             link
             slug
           }
@@ -54,12 +55,14 @@ exports.createPages = async ({ graphql, actions }) => {
     // Gatsby uses Redux to manage its internal state.
     // Plugins and sites can use functions like "createPage"
     // to interact with Gatsby.
+
+    let link = edge.node.link.split('http://hxl2.local/')[1];
     createPage({
       // Each page is required to have a `path` as well
       // as a template component. The `context` is
       // optional but is often necessary so the template
       // can query data specific to each page.
-      path: `/${edge.node.slug}/`,
+      path: `/${link}`,
       component: slash(pageTemplate),
       context: {
         id: edge.node.id,
@@ -72,9 +75,16 @@ exports.createPages = async ({ graphql, actions }) => {
   // We want to create a detailed page for each
   // post node. We'll just use the WordPress Slug for the slug.
   // The Post ID is prefixed with 'POST_'
+
   allWordpressPost.edges.forEach(edge => {
+
+  	//format date for path
+	  let d = new Date(edge.node.date);
+		let formatter = new Intl.DateTimeFormat('en-US', {month: '2-digit', year: 'numeric'}).formatToParts(d);
+		let formatted = formatter[2].value+formatter[1].value+formatter[0].value;
+
     createPage({
-      path: `/${edge.node.slug}/`,
+      path: `/${formatted}/${edge.node.slug}/`,
       component: slash(postTemplate),
       context: {
         id: edge.node.id,

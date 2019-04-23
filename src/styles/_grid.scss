@@ -30,6 +30,10 @@
   grid-column: span 7;
 }
 
+.col-12 {
+  grid-column: span 12;
+}
+
 
 @media only screen and (max-width: $system__breakpoint--small) {
   .grid-container {
@@ -42,7 +46,8 @@
   .col-4,
   .col-5,
   .col-6,
-  .col-7 {
+  .col-7,
+  .col-12 {
     grid-column: 1 / -1;
   }
 }

@@ -7,7 +7,10 @@
 @import '_nav';
 @import '_accordion';
 @import '_carousel';
+@import '_footer';
 
+
+*,*:before,*:after{ box-sizing: border-box; }
 
 body {
 	background-color: $color__gray-light;
@@ -58,7 +61,7 @@ section {
 	span {
 		color: $color__white;
 		display: block;
-		font-size: 14px;
+		font-size: type-scale(6);
 		position: absolute;
 		left: 50%;
 		top: 50%;
@@ -75,17 +78,17 @@ section {
 	font-family: 'Stag-Book';
 	text-transform: uppercase;
 	&.btn--primary {
-		font-size: 16px;
+		font-size: type-scale(0);
 		height: 60px;
 		padding: 0 38px;
 	}
 	&.btn--secondary {
-		font-size: 14px;
+		font-size: type-scale(6);
 		height: 40px;
 		padding: 0 17px;
 	}
 	&:after {
-		background: url('/images/icon-external.svg') no-repeat;
+		background: url('../assets/images/icon-external.svg') no-repeat;
 		background-size: contain;
 		content: '';
 		display: inline-block;
@@ -118,14 +121,17 @@ blockquote {
 		top: 44px;
 	}
 	.blockquote__inner {
-		padding: 24px 20px 0;	
+		height: 288px;
+		padding: 24px 30px 0;	
 		p {
 			font-family: 'Stag-Book';
+			font-size: 18px;
+			line-height: 22px;
 		}
 		cite {
 			color: $color__coral;
 			display: block;
-			font-size: 12px;
+			font-size: type-scale(-1);
 			font-style: normal;
 			line-height: 14px;
 			padding-bottom: 20px;
@@ -139,7 +145,7 @@ blockquote {
 		border-radius: 0 0 10px 10px;
 		color: $color__white;
 		display: flex;
-		font-size: 14px;
+		font-size: type-scale(6);
 		line-height: 18px;
 		padding: 16px;
 		.org__logo {
@@ -148,7 +154,18 @@ blockquote {
 			flex-shrink: 0;
 			height: 50px;
 			margin-right: 15px;
+			overflow: hidden;
+			position: relative;
 			width: 50px;
+			img{
+			    height: auto;
+			    left: 50%;
+			    padding: 8px;
+			    position: absolute;
+			    top: 50%;
+			    transform: translate(-50%, -50%);
+				width: 100%;
+			}
 		}
 	}
 }
@@ -168,12 +185,22 @@ blockquote {
 
 .blurb {
 	background-color: $color__white;
+	display: flex;
+	flex-flow: column;
 	.logo {
-		background-color: #ebebeb;
-		margin: 44px 30px;
+		height: 200px;
+		margin: 0 30px;
+  		display: flex;
+  		align-items: center;
+  		justify-content: center;
+  		img{
+			max-width: 100%;
+			max-height: 115px;
+		}
 	}
 	.org {
 		background-color: #fafafa;
+		margin-top: auto;
 		padding: 10px 30px 25px;
 	}
 	p {
@@ -199,7 +226,7 @@ blockquote {
 }
 
 .call-to-action {
-	background-color: #f2f2f2;
+	background-color: #F2F2F2;
 	grid-column: 1 / span 12;
 	padding: 38px 0;
 	h5 {
@@ -209,11 +236,6 @@ blockquote {
 		color: $color__coral;
 		margin: 0 0 20px;
 	}
-}
-
-footer {
-	margin: 50px 0;
-	text-align: center;
 }
 
 

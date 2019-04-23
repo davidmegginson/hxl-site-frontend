@@ -34,7 +34,8 @@ header {
 		color: $color__gray-medium;
 		display: flex;
 		font-family: 'Gotham';
-		font-size: 14px;
+		font-size: type-scale(6);
+		font-weight: bold;
 		line-height: 14px;
 		grid-column: 4 / span 9;
 		height: 60px;
@@ -46,14 +47,16 @@ header {
 	border-top: 3px solid #CCC;
 	.breadcrumbs {
 		font-family: 'SourceSansPro';
-		font-size: 12px;
-		line-height: 23px;
+		font-size: type-scale(-1);
 		grid-column: 1 / -1;
+		height: 22px;
 		a {
 			border-width: 1px;
 			padding: 0 6px;
 			&.active {
+				cursor: default;
 				font-weight: bold;
+   			pointer-events: none;
 			}
 		}
 	}
@@ -124,11 +127,16 @@ header {
 		}
 		nav {
 			align-items: flex-start;
+			background-color: $color__white;
 			display: none;
 			flex-flow: column;
+			padding: 20px;
+			position: absolute;
+			top: 87px;
+			width: 100%;
 			a {
 				border: 0;
-				padding: 0;
+				padding: 0 0 20px;
 			}
 		}
 	}

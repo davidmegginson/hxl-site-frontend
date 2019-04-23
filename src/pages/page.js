@@ -9,13 +9,17 @@ import {
     AccordionItemBody,
 } from 'react-accessible-accordion';
 
+
+import cta from "../assets/images/call-to-action.png"
+import postcard from "../assets/images/hxl-postcards.png"
+
 export default ({ data }) => {
   return (
     <React.Fragment>
-      <Header />
+      <Header page={'How it works'} />
         <div className='viewport-container'>
           <div className='grid-container'>
-            <nav className='sidebar tertiary-nav' aria-labelledby="tertiary-navigation">
+            <nav className='sidebar tertiary-nav' aria-labelledby='tertiary-navigation'>
               <ul>
                 <li><h5><a href='/'>Jump link 1</a></h5></li>
                 <li><a href='/'>Jump link 2</a></li>
@@ -45,7 +49,7 @@ export default ({ data }) => {
               <h5>HXL Postcards</h5>
               <div className='grid-container'>
                 <div className='col-7'>
-                  <img src='/images/hxl-postcards.png' width='100%' alt='' />
+                  <img src={postcard} width='100%' alt='HXL Postcards' />
                 </div>
                 <div className='col-5'>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad <a href='/'>minim veniam</a>, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.
@@ -85,7 +89,7 @@ export default ({ data }) => {
                 <button className='btn btn--secondary'>Sign up for demo</button>
               </div>
               <div className='col-5'>
-                <img src='/images/call-to-action.png' width='400' alt='' />
+                <img src={cta} width='400' alt='CTA' />
               </div>
             </div>
           </section>

@@ -1,9 +1,9 @@
 import React from "react"
-import { graphql } from "gatsby"
 
 import Header from '../components/header'
 import Footer from '../components/footer'
-import Carousel from '../components/carousel'
+import Organizations from '../components/organizations'
+import Testimonials from '../components/testimonials'
 
 export default ({ data }) => {
   return (
@@ -42,245 +42,14 @@ export default ({ data }) => {
 
       <section>
         <h4 className='center'>What people are saying</h4>
-        <Carousel responsive={[ {breakpoint: 768, settings: {slidesToShow: 1, slidesToScroll: 1}}, {breakpoint: 10000, settings: {slidesToShow: 4, slidesToScroll: 4}} ]}>
-          <div className='carousel__item'>
-            <blockquote>
-              <div className='quotation-mark'>“</div>
-              <div className='blockquote__inner'>
-                <p>“IOM hopes to make it easier for its field staff to share <a>data through HDX</a> and to increase the interoperability of this data by using the Humanitarian Exchange Language (HXL).”</p>
-                <cite><span>source:</span> IOM and OCHA: Partners in Displacement Data</cite>
-              </div>
-              <div className='org'>
-                <div className='org__logo'></div>
-                <h6>International Organization for Migration (IOM)</h6>
-              </div>
-            </blockquote>
-          </div>
-          <div className='carousel__item'>
-            <blockquote>
-              <div className='quotation-mark'>“</div>
-              <div className='blockquote__inner'>
-                <p>“IOM hopes to make it easier for its field staff to share <a>data through HDX</a> and to increase the interoperability of this data by using the Humanitarian Exchange Language (HXL).”</p>
-                <cite><span>source:</span> IOM and OCHA: Partners in Displacement Data</cite>
-              </div>
-              <div className='org'>
-                <div className='org__logo'></div>
-                <h6>International Organization for Migration (IOM)</h6>
-              </div>
-            </blockquote>
-          </div>
-          <div className='carousel__item'>
-            <blockquote>
-              <div className='quotation-mark'>“</div>
-              <div className='blockquote__inner'>
-                <p>“IOM hopes to make it easier for its field staff to share <a>data through HDX</a> and to increase the interoperability of this data by using the Humanitarian Exchange Language (HXL).”</p>
-                <cite><span>source:</span> IOM and OCHA: Partners in Displacement Data</cite>
-              </div>
-              <div className='org'>
-                <div className='org__logo'></div>
-                <h6>International Organization for Migration (IOM)</h6>
-              </div>
-            </blockquote>
-          </div>
-          <div className='carousel__item'>
-            <blockquote>
-              <div className='quotation-mark'>“</div>
-              <div className='blockquote__inner'>
-                <p>“IOM hopes to make it easier for its field staff to share <a>data through HDX</a> and to increase the interoperability of this data by using the Humanitarian Exchange Language (HXL).”</p>
-                <cite><span>source:</span> IOM and OCHA: Partners in Displacement Data</cite>
-              </div>
-              <div className='org'>
-                <div className='org__logo'></div>
-                <h6>International Organization for Migration (IOM)</h6>
-              </div>
-            </blockquote>
-          </div>
-          <div className='carousel__item'>
-            <blockquote>
-              <div className='quotation-mark'>“</div>
-              <div className='blockquote__inner'>
-                <p>“IOM hopes to make it easier for its field staff to share <a>data through HDX</a> and to increase the interoperability of this data by using the Humanitarian Exchange Language (HXL).”</p>
-                <cite><span>source:</span> IOM and OCHA: Partners in Displacement Data</cite>
-              </div>
-              <div className='org'>
-                <div className='org__logo'></div>
-                <h6>International Organization for Migration (IOM)</h6>
-              </div>
-            </blockquote>
-          </div>
-          <div className='carousel__item'>
-            <blockquote>
-              <div className='quotation-mark'>“</div>
-              <div className='blockquote__inner'>
-                <p>“IOM hopes to make it easier for its field staff to share <a>data through HDX</a> and to increase the interoperability of this data by using the Humanitarian Exchange Language (HXL).”</p>
-                <cite><span>source:</span> IOM and OCHA: Partners in Displacement Data</cite>
-              </div>
-              <div className='org'>
-                <div className='org__logo'></div>
-                <h6>International Organization for Migration (IOM)</h6>
-              </div>
-            </blockquote>
-          </div>
-        </Carousel>
+        <Testimonials />
       </section>
-
-      {/*
-      <section>
-       <h4 className='center'>Blurb for orgs that use HXL</h4>
-        <Carousel responsive={[ {breakpoint: 768, settings: {slidesToShow: 1, slidesToScroll: 1}}, {breakpoint: 10000, settings: {slidesToShow: 4, slidesToScroll: 4}} ]}>
-          <div className='carousel__item blurb'>
-            <div className='logo'>
-              logo
-            </div>
-            <div className='org'>
-              <p>Name of organisation</p>
-              <h6><a href='#' className='external'>See hxlated data set on HDX</a></h6>
-            </div>
-          </div>
-          <div className='carousel__item blurb'>
-            <div className='logo'>
-              logo
-            </div>
-            <div className='org'>
-              <p>Name of organisation</p>
-              <h6><a href='#' className='external'>See hxlated data set on HDX</a></h6>
-            </div>
-          </div>
-          <div className='carousel__item blurb'>
-            <div className='logo'>
-              logo
-            </div>
-            <div className='org'>
-              <p>Name of organisation</p>
-              <h6><a href='#' className='external'>See hxlated data set on HDX</a></h6>
-            </div>
-          </div>
-          <div className='carousel__item blurb'>
-            <div className='logo'>
-              logo
-            </div>
-            <div className='org'>
-              <p>Name of organisation</p>
-              <h6><a href='#' className='external'>See hxlated data set on HDX</a></h6>
-            </div>
-          </div>
-          <div className='carousel__item blurb'>
-            <div className='logo'>
-              logo
-            </div>
-            <div className='org'>
-              <p>Name of organisation</p>
-              <h6><a href='#' className='external'>See hxlated data set on HDX</a></h6>
-            </div>
-          </div>
-          <div className='carousel__item blurb'>
-            <div className='logo'>
-              logo
-            </div>
-            <div className='org'>
-              <p>Name of organisation</p>
-              <h6><a href='#' className='external'>See hxlated data set on HDX</a></h6>
-            </div>
-          </div>
-          <div className='carousel__item blurb'>
-            <div className='logo'>
-              logo
-            </div>
-            <div className='org'>
-              <p>Name of organisation</p>
-              <h6><a href='#' className='external'>See hxlated data set on HDX</a></h6>
-            </div>
-          </div>
-          <div className='carousel__item blurb'>
-            <div className='logo'>
-              logo
-            </div>
-            <div className='org'>
-              <p>Name of organisation</p>
-              <h6><a href='#' className='external'>See hxlated data set on HDX</a></h6>
-            </div>
-          </div>
-        </Carousel>
-      </section>
-      */}
 
       <section>
         <h4 className='center'>Blurb for orgs that use HXL</h4>
-        <div className='grid-container'>
-          <div className='col-3 blurb'>
-            <div className='logo'>
-              logo
-            </div>
-            <div className='org'>
-              <p>Name of organisation</p>
-              <h6><a href='#' className='external'>See hxlated data set on HDX</a></h6>
-            </div>
-          </div>
-          <div className='col-3 blurb'>
-            <div className='logo'>
-              logo
-            </div>
-            <div className='org'>
-              <p>Name of organisation</p>
-              <h6><a href='#' className='external'>See hxlated data set on HDX</a></h6>
-            </div>
-          </div>
-          <div className='col-3 blurb'>
-            <div className='logo'>
-              logo
-            </div>
-            <div className='org'>
-              <p>Name of organisation</p>
-              <h6><a href='#' className='external'>See hxlated data set on HDX</a></h6>
-            </div>
-          </div>
-          <div className='col-3 blurb'>
-            <div className='logo'>
-              logo
-            </div>
-            <div className='org'>
-              <p>Name of organisation</p>
-              <h6><a href='#' className='external'>See hxlated data set on HDX</a></h6>
-            </div>
-          </div>
-          <div className='col-3 blurb'>
-            <div className='logo'>
-              logo
-            </div>
-            <div className='org'>
-              <p>Name of organisation</p>
-              <h6><a href='#' className='external'>See hxlated data set on HDX</a></h6>
-            </div>
-          </div>
-          <div className='col-3 blurb'>
-            <div className='logo'>
-              logo
-            </div>
-            <div className='org'>
-              <p>Name of organisation</p>
-              <h6><a href='#' className='external'>See hxlated data set on HDX</a></h6>
-            </div>
-          </div>
-          <div className='col-3 blurb'>
-            <div className='logo'>
-              logo
-            </div>
-            <div className='org'>
-              <p>Name of organisation</p>
-              <h6><a href='#' className='external'>See hxlated data set on HDX</a></h6>
-            </div>
-          </div>
-          <div className='col-3 blurb'>
-            <div className='logo'>
-              logo
-            </div>
-            <div className='org'>
-              <p>Name of organisation</p>
-              <h6><a href='#' className='external'>See hxlated data set on HDX</a></h6>
-            </div>
-          </div>
-        </div>
+        <Organizations />
       </section>
+
       <Footer />
     </React.Fragment>
   )
@@ -299,14 +68,3 @@ export default ({ data }) => {
 //     }
 //   }
 // `
-
-// <div>
-//   <h1>My WordPress Blog</h1>
-//   <h4>Posts</h4>
-//   {data.allWordpressPost.edges.map(({ node }) => (
-//     <div>
-//       <p>{node.title}</p>
-//       <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-//     </div>
-//   ))}
-// </div>

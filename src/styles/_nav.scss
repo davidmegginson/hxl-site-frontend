@@ -78,10 +78,10 @@ header {
 	background-color: transparent;
 	border: 0;
 	display: none;
-	padding: 0;
+	padding: 30px;
 	position: fixed;
-	right: 30px;
-	top: 35px;
+	right: 0;
+	top: 5px;
 	z-index: 2;
 	.icon-bar {
     background-color: $color__gray-medium;
@@ -128,15 +128,21 @@ header {
 		nav {
 			align-items: flex-start;
 			background-color: $color__white;
-			display: none;
 			flex-flow: column;
+			height: auto;
+			opacity: 0;
 			padding: 20px;
 			position: absolute;
 			top: 87px;
 			width: 100%;
+			transition: all 0.3s ease;
 			a {
 				border: 0;
-				padding: 0 0 20px;
+				padding: 10px 0;
+				width: 100%;
+			}
+			&.active {
+				opacity: 1;
 			}
 		}
 	}

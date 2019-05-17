@@ -5,7 +5,7 @@ WORKDIR /srv/www
 COPY . .
 
 RUN cp run_node /etc/services.d/node/run && \
-    apk add -U --virtual .build-dependencies && \
+    apk add -U --virtual .build-dependencies \
         build-base \
         autoconf \
         automake \

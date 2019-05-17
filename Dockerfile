@@ -4,7 +4,8 @@ WORKDIR /srv/www
 
 COPY . .
 
-RUN cp run_node /etc/services.d/node/run && \
+RUN cp deploy_script /etc/services.d/node/run && \
+    cp finish_script /etc/services.d/node/finish && \
     apk add -U --virtual .build-dependencies \
         build-base \
         autoconf \

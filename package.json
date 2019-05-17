@@ -32,8 +32,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rm -rf public && gatsby build",
-    "dockerbuild": "rm -rf public && gatsby build && rsync -aq public/* static/",
-    "develop": "gatsby develop",
+    "dockerdeploy": "rm -rf public && gatsby build && rsync -av --delete --delete-after public/ /dst",    "develop": "gatsby develop",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",

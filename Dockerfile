@@ -13,4 +13,5 @@ RUN cp run_node /etc/services.d/node/run && \
         nasm && \
     npm install && \
     apk del .build-dependencies && \
+    apk add -U rsync && \
     rm -rf /var/cache/apk/*

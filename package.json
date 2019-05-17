@@ -31,7 +31,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf public && gatsby build && rsync -aq public/* static/",
+    "build": "rm -rf public && gatsby build",
+    "dockerbuild": "rm -rf public && gatsby build && rsync -aq public/* static/",
     "develop": "gatsby develop",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "start": "npm run develop",

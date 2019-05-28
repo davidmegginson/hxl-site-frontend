@@ -58,7 +58,7 @@ module.exports = {
         // If useACF is true, then the source plugin will try to import the WordPress ACF Plugin contents.
         // This feature is untested for sites hosted on WordPress.com
         useACF: true,
-        verboseOutput: false,
+        verboseOutput: true,
         excludedRoutes: [
           "/wp/v2/users/me", 
           "/wp/v2/settings", 
@@ -68,6 +68,8 @@ module.exports = {
           "**/*/*/taxonomies", 
           "**/*/*/comments",
           "**/*/*/search",
+          "**/*/*/tags",
+          "**/*/*/blocks",
         ]
       },
     },

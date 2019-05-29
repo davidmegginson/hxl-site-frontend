@@ -1,6 +1,8 @@
-import React, { Component }  from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
-import logo from "../assets/images/logo-hxl.svg"
+import React, { Component }  from 'react'
+import { StaticQuery, graphql, Link } from 'gatsby'
+
+import OCHAHeader from '../components/ochaheader'
+import logo from '../assets/images/logo-hxl.svg'
 
 class Header extends Component{
   constructor(){
@@ -21,6 +23,7 @@ class Header extends Component{
         render={data => {
           return (
             <header>
+              <OCHAHeader />
               <div className='primary-nav'>
                 <div className='grid-container center--vertical'>
                   <Link to={'/'} className='logo'><img src={logo} alt='HXL logo' /></Link>

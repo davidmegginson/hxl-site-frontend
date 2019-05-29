@@ -68,6 +68,8 @@ module.exports = {
           "**/*/*/taxonomies", 
           "**/*/*/comments",
           "**/*/*/search",
+          "**/*/*/tags",
+          "**/*/*/blocks",
         ]
       },
     },

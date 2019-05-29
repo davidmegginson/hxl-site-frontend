@@ -25,9 +25,7 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-    }
-  `)
-    /*allWordpressPost {
+      allWordpressPost {
         edges {
           node {
             id
@@ -36,8 +34,10 @@ exports.createPages = async ({ graphql, actions }) => {
             slug
           }
         }
-      }*/
-      
+      }
+    }
+  `)
+
   // Check for any errors
   if (result.errors) {
     throw new Error(result.errors)
@@ -76,7 +76,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // post node. We'll just use the WordPress Slug for the slug.
   // The Post ID is prefixed with 'POST_'
 
-  allWordpressPost && allWordpressPost.edges.forEach(edge => {
+  allWordpressPost.edges.forEach(edge => {
 
   	//format date for path
 	  let d = new Date(edge.node.date);

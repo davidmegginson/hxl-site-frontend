@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ochaLogo from '../assets/images/logo-ocha-lockup-white.png'
 
-class Footer extends React.Component {
+class Footer extends Component {
   render() {
     return (
 			<footer>

@@ -7,51 +7,51 @@ import Testimonials from '../components/testimonials'
 
 export default ({ data }) => {
   return (
-    <React.Fragment>
+    <div className='wrapper'>
       <Header />
       <section className='hero'>
         <div className='grid-container'>
           <div className='hero__inner'>
-            <h2>Simple standard for messy data</h2>
-            <h5>HXL is a <a href='/'>different kind</a> of data standard, designed to improve information sharing during a humanitarian crisis without adding <a href='/'>extra reporting burdens</a>.</h5>
+            <h1 className='special'>Simple standard for messy data</h1>
+            <h3>HXL is a different kind of data standard, designed to improve information sharing during a humanitarian crisis without adding extra reporting burdens.</h3>
           </div>
         </div>
       </section>
 
       <section>
-        <h4 className='center'>The 30-second HXL Tutorial</h4>
+        <h2 className='center'>The 30-second HXL Tutorial</h2>
         <div className='grid-container'>
           <div className='col-4 tutorial__step'>
             <img src='./images/tutorial-1.png' alt='' />
-            <h5><a href='/'><div className='bullet--number'><span>1</span></div>Grab a spreadsheet of humanitarian data</a></h5>
+            <h3><a href='/'><div className='bullet--number'><span>1</span></div>Grab a spreadsheet of humanitarian data</a></h3>
           </div>
           <div className='col-4 tutorial__step'>
             <img src='./images/tutorial-2.png' alt='' />
-            <h5><a href='/'><div className='bullet--number'><span>2</span></div>Insert a new row between the headers and the data</a></h5>
+            <h3><a href='/'><div className='bullet--number'><span>2</span></div>Insert a new row between the headers and the data</a></h3>
           </div>
           <div className='col-4 tutorial__step'>
             <img src='./images/tutorial-3.png' alt='' />
-            <h5><a href='/'><div className='bullet--number'><span>3</span></div>Add some HXL tags</a></h5>
+            <h3><a href='/'><div className='bullet--number'><span>3</span></div>Add some HXL tags</a></h3>
           </div>
         </div>
         <div className='center'>
-          <p className='small'>Not sure which HXL tag to use? See <a href='/'>HXL hashtags in action classifying datasets</a>.<br/>Then, HXL-ate your own spreadsheets.</p>
-          <button className='btn btn--primary'>Open HXL Tag Assist</button>
+          <p className='small'>Not sure which HXL tag to use? See <a href='/standard/dictionary/'>HXL hashtags in action classifying datasets</a>.<br/>Then, HXL-ate your own spreadsheets.</p>
+          <a href='https://tools.humdata.org/examples/hxl/' target='_blank' className='btn btn--primary'>Open HXL Tag Assist</a>
         </div>
       </section>
 
       <section>
-        <h4 className='center'>What people are saying</h4>
+        <h2 className='center'>What people are saying</h2>
         <Testimonials />
       </section>
 
       <section>
-        <h4 className='center'>Blurb for orgs that use HXL</h4>
+        <h2 className='center'>Blurb for orgs that use HXL</h2>
         <Organizations />
       </section>
 
       <Footer />
-    </React.Fragment>
+    </div>
   )
 }
 

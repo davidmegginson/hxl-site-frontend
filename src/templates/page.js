@@ -9,7 +9,7 @@ class PageTemplate extends Component {
     const page = this.props.data.wordpressPage
 
     return (
-      <div>
+      <div className='wrapper'>
         <Header page={page.title} />
         <div className='viewport-container'>
           <div className='grid-container'>
@@ -21,7 +21,7 @@ class PageTemplate extends Component {
                       { group.links.map((item, itemID) => {
                         let link = <a href={item.link.url}>{item.link.title}</a>;
                         if (itemID===0) {
-                          link = (item.link.url==='#') ? <h5>{item.link.title}</h5> : <h5><a href={item.link.url}>{item.link.title}</a></h5>
+                          link = (item.link.url==='#') ? <h3>{item.link.title}</h3> : <h3><a href={item.link.url}>{item.link.title}</a></h3>
                         }
                         return (
                           <li key={item.link.title}>{link}</li>
@@ -33,7 +33,7 @@ class PageTemplate extends Component {
               </nav>
             }
             <div className={page.acf.linkGroup ? 'main-content' : 'main-content full-width'}>
-              <h3 dangerouslySetInnerHTML={{ __html: page.title }} />
+              <h1 dangerouslySetInnerHTML={{ __html: page.title }} />
               <div dangerouslySetInnerHTML={{ __html: page.content }} />
             </div>
           </div>

@@ -37,7 +37,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/images/favicon.ico`, // This path is relative to the root of the site.
+        icon: `src/assets/images/hxl-favicon.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -60,6 +60,11 @@ module.exports = {
         useACF: true,
         verboseOutput: false,
         excludedRoutes: [
+          "/acf/v3/categories",
+          "/acf/v3/tags/",
+          "/acf/v3/comments/",
+          "/acf/v3/options/",
+          "/acf/v3/users/",
           "/wp/v2/users/me", 
           "/wp/v2/settings", 
           "/wp/v2/themes", 

@@ -16,14 +16,14 @@ class OCHAHeader extends Component{
     return (
       <div className="global-header">
         <div className="grid-container">
-          <div className="col-12 global-header-content">
+          <div className={`col-12 global-header-content ${this.state.menuOpen ? 'active' : ''}`}>
             <a href="#" data-toggle="dropdown" className="ocha-services" onClick={this.toggleServicesMenu} >
               <span className="ocha-logo"></span>
               <span className="ocha-services-text">OCHA Services</span>
               <svg className="icon-o-arrow-up" viewBox="0 0 48 48"><path d="M0,34a4,4,0,0,1,1.17-2.83l20-20a4,4,0,0,1,5.66,0l20,20a4,4,0,1,1-5.66,5.66L24,19.66,6.83,36.83A4,4,0,0,1,0,34Z"></path></svg>
               <svg className="icon-o-arrow-down" viewBox="0 0 48 48"><path d="M48,14a4,4,0,0,1-1.17,2.83l-20,20a4,4,0,0,1-5.66,0l-20-20a4,4,0,0,1,5.66-5.66L24,28.34,41.17,11.17A4,4,0,0,1,48,14Z"></path></svg>
             </a>
-            <div className={`dropdown-menu ocha-services-menu ${this.state.menuOpen ? 'active' : ''}`} role="menu" ref={this.menuRef}>
+            <div className="dropdown-menu ocha-services-menu" role="menu" ref={this.menuRef}>
               <div className="grid-container">
                 <div className="col-3">
                   <p className="list-title">Related Platforms</p>

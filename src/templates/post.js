@@ -10,7 +10,7 @@ class PostTemplate extends Component {
     const post = this.props.data.wordpressPost
 
     return (
-      <div>
+      <div className='wrapper'>
         <Header page={post.title} />
         <div className='viewport-container'>
           <div className='grid-container'>
@@ -22,7 +22,7 @@ class PostTemplate extends Component {
                       { group.links.map((item, itemID) => {
                         let link = <a href={item.link.url}>{item.link.title}</a>;
                         if (itemID===0) {
-                          link = (item.link.url==='#') ? <h5>{item.link.title}</h5> : <h5><a href={item.link.url}>{item.link.title}</a></h5>
+                          link = (item.link.url==='#') ? <h3>{item.link.title}</h3> : <h3><a href={item.link.url}>{item.link.title}</a></h3>
                         }
                         return (
                           <li key={item.link.title}>{link}</li>
@@ -34,7 +34,7 @@ class PostTemplate extends Component {
               </nav>
             }
             <div className={post.acf.linkGroup ? 'main-content' : 'main-content full-width'}>
-        			<h3 dangerouslySetInnerHTML={{ __html: post.title }} />
+        			<h1 dangerouslySetInnerHTML={{ __html: post.title }} />
         			<div dangerouslySetInnerHTML={{ __html: post.content }} />
         		</div>
         	</div>

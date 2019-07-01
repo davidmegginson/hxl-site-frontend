@@ -11,8 +11,8 @@ const Organizations = ({ data }) => (
             <img src={logo} alt='logo' />
           </div>
           <div className='org'>
-            <h3>{item.node.title}</h3>
-            <h4><a href={item.node.acf.hdxurl} className='external' target='_blank' rel='noopener noreferrer'>See hxlated dataset on HDX</a></h4>
+            <h4>{item.node.title}</h4>
+            <h5><a href={item.node.acf.hdxurl} className='external' target='_blank' rel='noopener noreferrer'>See hxlated dataset on HDX</a></h5>
           </div>
         </div>
       )

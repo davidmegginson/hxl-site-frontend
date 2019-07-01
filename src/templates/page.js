@@ -6,7 +6,7 @@ import Footer from '../components/footer'
 
 class PageTemplate extends Component {
   render() {
-    const page = this.props.data.wordpressPage
+    const page = this.props.data.wordpressPage;
 
     return (
       <div className='wrapper'>

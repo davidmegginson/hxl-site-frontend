@@ -12,9 +12,9 @@ exports.onCreateWebpackConfig = ({ actions, stage }) => {
 module.exports = {
   pathPrefix: `/hxl-redesign`,
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `HXL`,
+    description: `HXL is a different kind of data standard, designed to improve information sharing during a humanitarian crisis without adding extra reporting burdens.`,
+    author: `@humdata`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -43,21 +43,11 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        /*
-        * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
-        * Example : 'gatsbyjswpexample.wordpress.com' or 'www.example-site.com'
-        */
         baseUrl: `blog.dev.hxlstandard.org`,
-        // The protocol. This can be http or https.
         protocol: `http`,
-        // Indicates whether the site is hosted on wordpress.com.
-        // If false, then the asumption is made that the site is self hosted.
-        // If true, then the plugin will source its content on wordpress.com using the JSON REST API V2.
-        // If your site is hosted on wordpress.org, then set this to false.
         hostingWPCOM: false,
-        // If useACF is true, then the source plugin will try to import the WordPress ACF Plugin contents.
-        // This feature is untested for sites hosted on WordPress.com
         useACF: true,
+              backgroundColor: `white`,
         verboseOutput: false,
         excludedRoutes: [
           "/acf/v3/categories",
@@ -75,6 +65,18 @@ module.exports = {
           "**/*/*/search",
           "**/*/*/tags",
           "**/*/*/blocks",
+        ],
+        plugins: [
+          {
+            resolve: `gatsby-wordpress-inline-images`,
+            options: {
+              baseUrl: `blog.dev.hxlstandard.org`,
+              protocol: `http`,
+              backgroundColor: `white`,
+              maxWidth: 650,
+              wrapperStyle: `gatsby-image-wrapper`,
+            }
+          }
         ]
       },
     },

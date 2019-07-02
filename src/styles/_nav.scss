@@ -23,106 +23,116 @@ header {
 .global-header {
 	background-color: $color__gray-medium;
 	.global-header-content {
-    height: 35px;
-    display: flex;
-    align-items: center;
-    > a {
-    	padding: 0;
-    }
-    &.active {
-    	.dropdown-menu {
-    		display: block;
-    	}
-    	.ocha-services {  		
-			  .icon-o-arrow-down {
-		   		display: none;
-		   	}
-			  .icon-o-arrow-up {
-		   		display: block;
-		   	}
-    	}
-    }
-	.ocha-services {
-		display: flex;
-    align-items: center;
-    font-family: helvetica, arial, sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    color: #EEE;
-    text-transform: capitalize;
-    &:hover {
-    	text-decoration: underline;
-    }
-		.ocha-logo {
-	    background: url('../assets/images/logo-ocha-white.svg') 50% no-repeat;
-	    background-size: contain;
-	    display: inline-block;
-	    flex-shrink: 0;
-	    height: 18px;
-	    margin-right: 4px;
-	    width: 21px;
-		}
-		.icon-o-arrow-up, 
+	    height: 35px;
+	    display: flex;
+	    align-items: center;
+    	> a {
+		    color: #EEE;
+		    font-family: helvetica, arial, sans-serif;
+		    font-weight: 400;
+		    font-size: 12px;
+	    	padding: 0;
+		    &:hover {
+		    	text-decoration: underline;
+		    }
+	    }
+	    &.active {
+	    	.dropdown-menu {
+	    		display: block;
+	    	}
+	    	.ocha-services {  		
+				  .icon-o-arrow-down {
+			   		display: none;
+			   	}
+				  .icon-o-arrow-up {
+			   		display: block;
+			   	}
+	    	}
+	    }
+		.ocha-services {
+			display: flex;
+		    align-items: center;
+		    text-transform: capitalize;
+			.ocha-logo {
+			    background: url('../assets/images/logo-ocha-white.svg') 50% no-repeat;
+			    background-size: contain;
+			    display: inline-block;
+			    flex-shrink: 0;
+			    height: 18px;
+			    margin-right: 4px;
+			    width: 21px;
+			}
+			.icon-o-arrow-up, 
 			.icon-o-arrow-down {
-	    	margin-left: 10px;
-	    	height: 9px;
-	    	fill: #eeeeee;
+		    	margin-left: 10px;
+		    	height: 9px;
+		    	fill: #eeeeee;
 			}
 			.icon-o-arrow-up {
-		   	display: none;
-	   	}
-	  }
-		.dropdown-menu {
-	    position: absolute;
-	    top: 35px;
-	    left: 0;
-	    z-index: 1000;
-	    display: none;
-	    float: left;
-	    min-width: 160px;
-	    padding: 5px 0;
-	    margin: 2px 0 0;
-	    font-size: 14px;
-	    text-align: left;
-	    list-style: none;
-	    background-color: #FFF;
-	    -webkit-background-clip: padding-box;
-	    background-clip: padding-box;
-	    border: 1px solid #CCC;
-	    border: 1px solid rgba(0,0,0,.15);
-	    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-	    box-shadow: 0 6px 12px rgba(0,0,0,.175);
-	  }
-	  .ocha-services-menu {
-	    background-color: #333;
-	    background-clip: unset;
-	    border: none;
-	    box-shadow: 0px -8px 12px rgba(0, 0, 0, 0.375);
-	    color: #EEE;
-	    font-family: helvetica, arial, sans-serif;
-	    font-size: 12px;
-	    font-weight: 400;
-	    margin: 0;
-	    padding: 22px 0;
-	    width: 100%;
-	    .list-title {
-	    	font-family: helvetica, arial, sans-serif;
-    		font-size: 12px;
-    		font-weight: 300;
+			   	display: none;
+		   	}
+		}
+		.faq {
+			align-items: center;
+			display: flex;
+			margin-left: auto;
+			.icon-o-help {
+		    	fill: #eeeeee;
+		    	height: 14px;
+    			margin-right: 10px;
 			}
-	    .ocha-links-list {
-			  list-style: none;
-			  padding: 0; 
-			  li {
-				  font-weight: 600;
-				  margin-bottom: 12px;
-				  a {
-    				color: #EEE;
-    				padding: 0;
-    				text-transform: capitalize;
-    				&:hover {
-    					text-decoration: underline;
-    				}
+		}
+		.dropdown-menu {
+		    position: absolute;
+		    top: 35px;
+		    left: 0;
+		    z-index: 1000;
+		    display: none;
+		    float: left;
+		    min-width: 160px;
+		    padding: 5px 0;
+		    margin: 2px 0 0;
+		    font-size: 14px;
+		    text-align: left;
+		    list-style: none;
+		    background-color: #FFF;
+		    -webkit-background-clip: padding-box;
+		    background-clip: padding-box;
+		    border: 1px solid #CCC;
+		    border: 1px solid rgba(0,0,0,.15);
+		    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+		    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+		}
+		.ocha-services-menu {
+		    background-color: #333;
+		    background-clip: unset;
+		    border: none;
+		    box-shadow: 0px -8px 12px rgba(0, 0, 0, 0.375);
+		    color: #EEE;
+		    font-family: helvetica, arial, sans-serif;
+		    font-size: 12px;
+		    font-weight: 400;
+		    margin: 0;
+		    padding: 22px 0;
+		    width: 100%;
+		    .list-title {
+		    	font-family: helvetica, arial, sans-serif;
+	    		font-size: 12px;
+	    		font-weight: 300;
+			}
+		    .ocha-links-list {
+				list-style: none;
+				padding: 0; 
+				li {
+					font-weight: 600;
+					margin-bottom: 12px;
+					a {
+	    				color: #EEE;
+	    				padding: 0;
+	    				text-transform: capitalize;
+	    				&:hover {
+	    					text-decoration: underline;
+	    				}
 					}
 				}
 			}
@@ -132,22 +142,22 @@ header {
 			.ocha-see-all {    
 				background: #666;
 				border-radius: 0;
-    		color: #EEE;
+    			color: #EEE;
 				display: block;
-	    	font-family: helvetica, arial, sans-serif;
-		    font-size: 14px;
-		    font-weight: 700;
-		    padding: 12px;
-		    position: absolute;
-		    bottom: 0;
-		    text-align: center;
-		    width: 100%;
-		    &:after {
-		    	display: none;
-		    }
-		    &:hover {
-    			background: rgba(102,102,102,.8);
-		    }
+		    	font-family: helvetica, arial, sans-serif;
+			    font-size: 14px;
+			    font-weight: 700;
+			    padding: 12px;
+			    position: absolute;
+			    bottom: 0;
+			    text-align: center;
+			    width: 100%;
+			    &:after {
+			    	display: none;
+			    }
+			    &:hover {
+	    			background: rgba(102,102,102,.8);
+			    }
 			}
 			.grid-container {			
 				&:before {
@@ -207,10 +217,6 @@ header {
 	}
 }
 .tertiary-nav {
-	// height: 100vh; 
-	// position: -webkit-sticky;
-	// position: sticky;
-	// top: 0;
 	ul {
 		margin: 0;
 		padding: 0 0 25px 0;
@@ -233,30 +239,30 @@ header {
 	top: 5px;
 	z-index: 2;
 	.icon-bar {
-    background-color: $color__gray-medium;
-    display: block;
-    height: system-unit(0.25);
-    -webkit-transition: all .2s ease;
-    transition: all .2s ease;
-    width: system-unit(2);
-    & + .icon-bar {
-    	margin-top: system-unit(0.375);
-    }
+	    background-color: $color__gray-medium;
+	    display: block;
+	    height: system-unit(0.25);
+	    -webkit-transition: all .2s ease;
+	    transition: all .2s ease;
+	    width: system-unit(2);
+	    & + .icon-bar {
+	    	margin-top: system-unit(0.375);
+	    }
 	}
 	&.expanded {
 		.icon-bar {
 			&:first-child {
 				position: absolute;
-		    top: 12px;
-		    -webkit-transform: rotate(45deg);
-		    -ms-transform: rotate(45deg);
-		    transform: rotate(45deg);
+			    top: 12px;
+			    -webkit-transform: rotate(45deg);
+			    -ms-transform: rotate(45deg);
+			    transform: rotate(45deg);
 			}
 			&:nth-child(2) {
-		    -webkit-transform: rotate(-45deg);
-		    -ms-transform: rotate(-45deg);
-		    transform: rotate(-45deg);
-		    position: absolute;
+			    -webkit-transform: rotate(-45deg);
+			    -ms-transform: rotate(-45deg);
+			    transform: rotate(-45deg);
+			    position: absolute;
 			}
 		}
 	}

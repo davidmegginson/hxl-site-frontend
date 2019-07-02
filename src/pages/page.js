@@ -1,14 +1,9 @@
-import React from "react"
+import React from 'react'
+import parse from 'html-react-parser'
 
 import Header from '../components/header'
 import Footer from '../components/footer'
-import AccordionComponent from '../components/accordion'
-import {
-    AccordionItem,
-    AccordionItemTitle,
-    AccordionItemBody,
-} from 'react-accessible-accordion';
-
+import Faq from '../components/faq'
 
 import cta from "../assets/images/call-to-action.png"
 import postcard from "../assets/images/hxl-postcards.png"
@@ -57,27 +52,8 @@ export default ({ data }) => {
                 </div>
               </div>
 
-              <h3>FAQ subheader</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad <a href='/'>minim veniam</a></p>
+              <Faq />
               
-              <AccordionComponent>
-                <AccordionItem>
-                  <AccordionItemTitle>
-                    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor?</h3>
-                  </AccordionItemTitle>
-                  <AccordionItemBody>
-                    <p>We define humanitarian data as:<br/>data about the context in which a humanitarian crisis is occurring (e.g., baseline/development data, damage assessments, geospatial data) data about the people affected by the crisis and their needs data about the response by organisations and people seeking to help those who need assistance.</p>
-                  </AccordionItemBody>
-                </AccordionItem>
-                <AccordionItem>
-                  <AccordionItemTitle>
-                    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor?</h3>
-                  </AccordionItemTitle>
-                  <AccordionItemBody>
-                    <p>We define humanitarian data as:<br/>data about the context in which a humanitarian crisis is occurring (e.g., baseline/development data, damage assessments, geospatial data) data about the people affected by the crisis and their needs data about the response by organisations and people seeking to help those who need assistance.</p>
-                  </AccordionItemBody>
-                </AccordionItem>
-              </AccordionComponent>
             </div>
           </div>
 

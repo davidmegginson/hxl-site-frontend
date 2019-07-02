@@ -18,7 +18,7 @@ export default ({ data }) => {
         </div>
       </section>
 
-      <section>
+      <section className='background-gray'>
         <h2 className='center'>The 30-second HXL Tutorial</h2>
         <div className='grid-container'>
           <div className='col-4 tutorial__step'>
@@ -40,17 +40,17 @@ export default ({ data }) => {
         </div>
       </section>
 
-      <section>
+      <section className='background-gray'>
         <h2 className='center'>What people are saying</h2>
         <Testimonials />
       </section>
 
-      <section>
+      <section className='background-gray'>
         <h2 className='center'>Blurb for orgs that use HXL</h2>
         <Organizations />
       </section>
 
-      <Footer />
+      <Footer hasCTA={false} />
     </div>
   )
 }

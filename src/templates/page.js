@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 
 import Header from '../components/header'
 import Footer from '../components/footer'
+import Faq from '../components/faq'
 
 class PageTemplate extends Component {
   render() {
@@ -35,6 +36,10 @@ class PageTemplate extends Component {
             <div className={page.acf.linkGroup ? 'main-content' : 'main-content full-width'}>
               <h1 dangerouslySetInnerHTML={{ __html: page.title }} />
               <div dangerouslySetInnerHTML={{ __html: page.content }} />
+
+              {
+                page.slug==='how-it-works' && <Faq/>
+              }
             </div>
           </div>
         </div>
@@ -49,6 +54,7 @@ export default PageTemplate
 export const pageQuery = graphql`
   query currentPageQuery($id: String!) {
     wordpressPage(id: { eq: $id }) {
+      slug
       title
       content
       acf{

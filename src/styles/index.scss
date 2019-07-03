@@ -308,7 +308,7 @@ table {
 
 @media only screen and (max-width: $system__breakpoint--small) {
 	section {
-		padding: 25px 0 50px;
+		padding: 25px 0;
 	}
 	.btn {
 		&.btn--primary {
@@ -355,5 +355,12 @@ table {
 			margin-top: 40px;
 			width: 80%;
 		}
+	}
+	pre {
+		white-space: pre-wrap;      
+		white-space: -moz-pre-wrap; 
+		white-space: -pre-wrap;      
+		white-space: -o-pre-wrap;    
+		word-wrap: break-word;
 	}
 }

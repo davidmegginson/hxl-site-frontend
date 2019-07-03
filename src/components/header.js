@@ -8,8 +8,18 @@ class Header extends Component{
   constructor(){
     super();
     this.mobileNavRef = React.createRef();
+    this.handleScroll = this.handleScroll.bind(this);
     this.toggleMobileNav = this.toggleMobileNav.bind(this);
-    this.state = { mobileNavOpen: false };
+    this.state = { mobileNavOpen: false, mobileNavFixed: '' };
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll() {
+    let isFixed = (window.pageYOffset >= 35) ? 'fixed' : '';
+    this.setState({mobileNavFixed: isFixed});
   }
 
   toggleMobileNav(){
@@ -24,7 +34,7 @@ class Header extends Component{
           return (
             <header>
               <OCHAHeader />
-              <div className='primary-nav'>
+              <div className={`primary-nav ${this.state.mobileNavFixed}`}>
                 <div className='grid-container center--vertical'>
                   <Link to={'/'} className='logo'><img src={logo} alt='HXL logo' /></Link>
                   <nav aria-labelledby='primary-navigation' ref={this.mobileNavRef} className={this.state.mobileNavOpen ? 'active' : ''}>
@@ -33,8 +43,10 @@ class Header extends Component{
                     ))}   
                   </nav>
                 </div>
+                <button type='button' className='mobile-nav-toggle collapsed' onClick={this.toggleMobileNav}>
+                  <span className='icon-bar'></span><span className='icon-bar'></span>
+                </button>
               </div>
-              <button type='button' className='mobile-nav-toggle collapsed' onClick={this.toggleMobileNav}><span className='icon-bar'></span><span className='icon-bar'></span></button>
               <div className='secondary-nav'>
                 <div className='grid-container center--vertical'>
                   <nav className='breadcrumbs' aria-labelledby="secondary-navigation">

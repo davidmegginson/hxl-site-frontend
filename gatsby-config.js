@@ -47,7 +47,7 @@ module.exports = {
         protocol: `http`,
         hostingWPCOM: false,
         useACF: true,
-              backgroundColor: `white`,
+        backgroundColor: `white`,
         verboseOutput: false,
         excludedRoutes: [
           "/acf/v3/categories",

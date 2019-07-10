@@ -1,5 +1,4 @@
 import React from 'react'
-import parse from 'html-react-parser'
 
 import Header from '../components/header'
 import Footer from '../components/footer'

@@ -17,6 +17,10 @@ class Header extends Component{
     window.addEventListener('scroll', this.handleScroll);
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
   handleScroll() {
     let isFixed = (window.pageYOffset >= 35) ? 'fixed' : '';
     this.setState({mobileNavFixed: isFixed});
@@ -27,6 +31,18 @@ class Header extends Component{
   }
 
   render() {
+    let page = this.props.page;
+    let parentPath = null;
+    let parentSlug = null;
+
+    //manually create breadcrumb for pages under 'specifications'
+    if (page) {
+      parentPath = page.path.substring(0, page.path.indexOf(page.slug));
+      parentPath = (parentPath.length > 1 && parentPath !== '/standard/') ? parentPath : null;
+      parentSlug = 'Specifications';
+    }
+    
+
     return (
       <StaticQuery
         query={menuQuery}
@@ -43,7 +59,7 @@ class Header extends Component{
                     ))}   
                   </nav>
                 </div>
-                <button type='button' className='mobile-nav-toggle collapsed' onClick={this.toggleMobileNav}>
+                <button type='button' className='mobile-nav-toggle collapsed' onClick={this.toggleMobileNav} aria-label='Mobile Nav Toggle'>
                   <span className='icon-bar'></span><span className='icon-bar'></span>
                 </button>
               </div>
@@ -51,8 +67,12 @@ class Header extends Component{
                 <div className='grid-container center--vertical'>
                   <nav className='breadcrumbs' aria-labelledby="secondary-navigation">
                     <Link to={'/'}>HXL Home</Link>
-                    { this.props.page && 
-                      <a className='active'>{this.props.page}</a>
+                    {
+                      parentPath &&
+                      <Link to={parentPath} key={parentSlug}>{parentSlug}</Link>
+                    }
+                    { page && 
+                      <a className='active'>{page.title}</a>
                     }
                   </nav>
                 </div>

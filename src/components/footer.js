@@ -2,13 +2,9 @@ import React, { Component } from 'react'
 
 import ochaLogo from '../assets/images/logo-ocha-lockup-white.png'
 import cta from "../assets/images/call-to-action.png"
-import postcard from "../assets/images/hxl-postcards.png"
 
 class Footer extends Component {
-  constructor(){
-    super();
-  }
-
+  
   render() {
   	let hasCTA = (this.props.hasCTA === undefined) ? true : this.props.hasCTA;
 

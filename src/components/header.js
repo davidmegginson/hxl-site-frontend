@@ -36,11 +36,11 @@ class Header extends Component{
     let parentSlug = null;
 
     //manually create breadcrumb for pages under 'specifications'
-    if (page) {
-      parentPath = page.path.substring(0, page.path.indexOf(page.slug));
-      parentPath = (parentPath.length > 1 && parentPath !== '/standard/') ? parentPath : null;
-      parentSlug = 'Specifications';
-    }
+    // if (page) {
+    //   parentPath = page.path.substring(0, page.path.indexOf(page.slug));
+    //   parentPath = (parentPath.length > 1 && parentPath !== '/standard/') ? parentPath : null;
+    //   parentSlug = 'Specifications';
+    // }
     
 
     return (
@@ -68,8 +68,8 @@ class Header extends Component{
                   <nav className='breadcrumbs' aria-labelledby="secondary-navigation">
                     <Link to={'/'}>HXL Home</Link>
                     {
-                      parentPath &&
-                      <Link to={parentPath} key={parentSlug}>{parentSlug}</Link>
+                      /*parentPath &&
+                      <Link to={parentPath} key={parentSlug}>{parentSlug}</Link>*/
                     }
                     { page && 
                       <a className='active'>{page.title}</a>

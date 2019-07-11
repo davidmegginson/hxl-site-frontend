@@ -66,18 +66,18 @@ module.exports = {
           "**/*/*/tags",
           "**/*/*/blocks",
         ],
-        plugins: [
-          {
-            resolve: `gatsby-wordpress-inline-images`,
-            options: {
-              baseUrl: `blog.dev.hxlstandard.org`,
-              protocol: `http`,
-              backgroundColor: `white`,
-              maxWidth: 650,
-              wrapperStyle: `gatsby-image-wrapper`,
-            }
-          }
-        ]
+        // plugins: [
+        //   {
+        //     resolve: `gatsby-wordpress-inline-images`,
+        //     options: {
+        //       baseUrl: `blog.dev.hxlstandard.org`,
+        //       protocol: `http`,
+        //       backgroundColor: `white`,
+        //       maxWidth: 650,
+        //       wrapperStyle: `gatsby-image-wrapper`,
+        //     }
+        //   }
+        // ]
       },
     },
     `gatsby-plugin-sass`,

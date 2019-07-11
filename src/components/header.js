@@ -36,7 +36,7 @@ class Header extends Component{
     let parentSlug = null;
 
     //manually create breadcrumb for pages under 'specifications'
-    // if (page) {
+    // if (page && page.path != undefined) {
     //   parentPath = page.path.substring(0, page.path.indexOf(page.slug));
     //   parentPath = (parentPath.length > 1 && parentPath !== '/standard/') ? parentPath : null;
     //   parentSlug = 'Specifications';

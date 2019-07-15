@@ -9,13 +9,15 @@ class Sidenav extends Component{
           return (
             <ul key={groupID}>
               { group.links.map((item, itemID) => {
-                let link = <a href={item.link.url}>{item.link.title}</a>;
-                if (itemID===0) {
-                  link = (item.link.url==='#') ? <h4>{item.link.title}</h4> : <h4><a href={item.link.url}>{item.link.title}</a></h4>
+                if (item.link !== null && item.title !== null) {
+                  let link = <a href={item.link.url}>{item.link.title}</a>;
+                  if (itemID===0) {
+                    link = (item.link.url==='#') ? <h4>{item.link.title}</h4> : <h4><a href={item.link.url}>{item.link.title}</a></h4>
+                  }
+                  return (
+                    <li key={item.link.title}>{link}</li>
+                  )
                 }
-                return (
-                  <li key={item.link.title}>{link}</li>
-                )
               })}
             </ul>
           )

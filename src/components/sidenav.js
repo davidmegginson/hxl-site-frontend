@@ -18,6 +18,9 @@ class Sidenav extends Component{
                     <li key={item.link.title}>{link}</li>
                   )
                 }
+                else {
+                  return null;
+                }
               })}
             </ul>
           )

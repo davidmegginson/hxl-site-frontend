@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import { graphql } from 'gatsby'
 
 import Header from '../components/header'
-import Sidenav from '../components/sidenav'
 import Footer from '../components/footer'
 import SEO from '../components/seo'
 
@@ -21,7 +20,23 @@ class PostTemplate extends Component {
           <div className='viewport-container'>
             <div className='grid-container'>
               { post.acf.linkGroup && 
-                <Sidenav links={post.acf.linkGroup} />
+                <nav className='sidebar tertiary-nav' aria-labelledby="tertiary-navigation">
+                  { post.acf.linkGroup.map((group, groupID) => {
+                    return (
+                      <ul key={groupID}>
+                        { group.links.map((item, itemID) => {
+                          let link = <a href={item.link.url}>{item.link.title}</a>;
+                          if (itemID===0) {
+                            link = (item.link.url==='#') ? <h4>{item.link.title}</h4> : <h4><a href={item.link.url}>{item.link.title}</a></h4>
+                          }
+                          return (
+                            <li key={item.link.title}>{link}</li>
+                          )
+                        })}
+                      </ul>
+                    )
+                  })}
+                </nav>
               }
               <div className={post.acf.linkGroup ? 'main-content' : 'main-content full-width'}>
           			<h1 dangerouslySetInnerHTML={{ __html: post.title }} />

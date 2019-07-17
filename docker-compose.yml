@@ -1,0 +1,12 @@
+version: '2.1'
+
+services:
+  gatsby:
+    image: unocha/hxl-gatsby:dev
+    # build: .
+    entrypoint: sleep 14400
+    environment:
+      NPM_CONFIG_SPIN: 'true'
+      NPM_CONFIG_PROGRESS: 'true'
+    volumes:
+      - "./:/srv/www"

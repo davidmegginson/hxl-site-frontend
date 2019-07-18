@@ -1,18 +1,22 @@
-FROM unocha/nodejs:10
+FROM unocha/debian-base:9
 
 WORKDIR /srv/www
 
 COPY . .
 
-RUN cp deploy_script /etc/services.d/node/run && \
-    cp finish_script /etc/services.d/node/finish && \
-    apk add -U --virtual .build-dependencies \
-        build-base \
-        autoconf \
-        automake \
-        libtool \
-        nasm && \
-    npm install && \
-    apk del .build-dependencies && \
-    apk add -U rsync && \
-    rm -rf /var/cache/apk/*
+RUN apt-get -qy update && \
+    apt-get -qy upgrade && \
+    apt-get -qy install \
+        build-essential \
+        curl \
+        net-tools \
+        software-properties-common && \
+    curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
+    apt-get install -qy nodejs && \
+    npm install -g yarn && \
+    yarn && \
+    yarn cache clean && \
+    apt-get -qy remove build-essential && \
+    apt-get -qy autoremove && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /root/.npm

@@ -26,6 +26,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-slick": "^0.23.2",
+    "sharp": "^0.22.1",
     "slick-carousel": "^1.8.1"
   },
   "keywords": [
@@ -35,6 +36,7 @@
   "scripts": {
     "build": "rm -rf public && gatsby build",
     "dockerdeploy": "rm -rf public && gatsby build && rsync -av --delete --delete-after public/ /dst",
+    "dockerdev": "gatsby develop -H 0.0.0.0",
     "develop": "gatsby develop",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "start": "npm run develop",

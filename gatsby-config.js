@@ -48,7 +48,7 @@ module.exports = {
         hostingWPCOM: false,
         useACF: true,
         backgroundColor: `white`,
-        verboseOutput: false,
+        verboseOutput: true,
         excludedRoutes: [
           "/acf/v3/categories",
           "/acf/v3/tags/",

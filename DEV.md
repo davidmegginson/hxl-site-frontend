@@ -18,5 +18,8 @@ The local `node_modules` will be erased and replaced.
 6. launch gatsby in developer mode with `docker-compose exec gatsby npm run dockerdev`
 7. wait for it then go to http://localhost:8000
 
+## test the deploy process locally to catch any errors early
+8. before pushing your work to merge it to dev, run `docker-compose exec gatsby npm run dockerdeploy`
+
 Repeat the one time setup whenever you update the modules used or if you suspect they got corrupted.
 Currently, the container will stay up for 4 hours then stop. Run `docker-compose start gatsby` to start it again.

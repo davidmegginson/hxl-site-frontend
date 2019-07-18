@@ -10,6 +10,7 @@ RUN apt-get -qy update && \
         build-essential \
         curl \
         net-tools \
+        rsync \
         software-properties-common && \
     curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
     apt-get install -qy nodejs && \

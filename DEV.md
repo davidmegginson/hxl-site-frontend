@@ -4,7 +4,7 @@ You will need Docker and docker-compose software installed on your computer
 
 ## prepare to start develop
 1. cd to this directory
-2. `docker-compose pull unocha/hxl-gatsby:dev`
+2. `docker-compose pull gatsby`
 3. `docker-compose up -d`
 
 ## one-time setup

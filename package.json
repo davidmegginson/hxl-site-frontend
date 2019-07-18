@@ -35,10 +35,11 @@
   "license": "MIT",
   "scripts": {
     "build": "rm -rf public && gatsby build",
-    "dockerdeploy": "rm -rf public && gatsby build && rsync -av --delete --delete-after public/ /dst",
-    "dockerdev": "gatsby develop -H 0.0.0.0",
     "develop": "gatsby develop",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "dockerdeploy": "rm -rf public && gatsby build && rsync -av --delete --delete-after public/ /dst",
+    "dockerdev": "gatsby develop -H 0.0.0.0",
+    "dockerlocalprepare": "echo 'removing old node_modules folder' && rm -rf node_modules && echo 'preparing new node_modules' && apt-get -qy update && apt-get -qy install build-essential && yarn && echo 'Done! Dev away! :)'",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""

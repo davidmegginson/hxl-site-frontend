@@ -37,7 +37,7 @@
     "build": "rm -rf public && gatsby build",
     "develop": "gatsby develop",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "dockerdeploy": "rm -rf public && gatsby build && rsync -av --delete --delete-after public/ /dst",
+    "dockerdeploy": "gatsby clean && gatsby build && rsync -av --delete --delete-after public/ /dst",
     "dockerdev": "gatsby develop -H 0.0.0.0",
     "dockerlocalprepare": "echo 'removing old node_modules folder' && rm -rf node_modules && echo 'preparing new node_modules' && apt-get -qy update && apt-get -qy install build-essential && yarn && echo 'Done! Dev away! :)'",
     "start": "npm run develop",

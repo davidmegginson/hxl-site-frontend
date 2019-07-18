@@ -26,6 +26,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-slick": "^0.23.2",
+    "rsync": "^0.6.1",
     "sharp": "^0.22.1",
     "slick-carousel": "^1.8.1"
   },

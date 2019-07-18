@@ -40,6 +40,9 @@ section {
 	&.background-gray {
 		background-color: $color__gray-light;
 	}
+	&.padding-bottom {
+		padding-bottom: 50px;
+	}
 }
 
 .hero {

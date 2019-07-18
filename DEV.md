@@ -1,14 +1,16 @@
-### Develop with Docker
+# Develop with Docker
 
 You will need Docker and docker-compose software installed on your computer
 
-# prepare to start develop
+## prepare to start develop
 1. cd to this directory
 2. docker-compose pull unocha/hxl-gatsby:dev
 3. docker-compose up -d
 
 ## one-time setup
-You need internet access for this step. The local node_modules will be erased and replaced.
+You need internet access for this step.
+The local node_modules will be erased and replaced.
+
 4. docker-compose exec gatsby npm run dockerlocalprepare
 
 ## develop away!

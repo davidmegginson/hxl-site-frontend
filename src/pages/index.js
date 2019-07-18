@@ -17,8 +17,8 @@ export default ({ data }) => {
         <section className='hero'>
           <div className='grid-container'>
             <div className='hero__inner'>
-              <h1 className='special'>Simple standard for messy data</h1>
-              <h3>HXL is a different kind of data standard, designed to improve information sharing during a humanitarian crisis without adding extra reporting burdens.</h3>
+              <h1 className='special'>The Humanitarian Exchange Language</h1>
+              <h3>A simple standard for messy data</h3>
             </div>
           </div>
         </section>
@@ -45,13 +45,13 @@ export default ({ data }) => {
           </div>
         </section>
 
-        <section className='background-gray'>
+        {/*<section className='background-gray'>
           <h2 className='center'>What people are saying</h2>
           <Testimonials />
-        </section>
+        </section>*/}
 
-        <section className='background-gray'>
-          <h2 className='center'>Blurb for orgs that use HXL</h2>
+        <section className='background-gray padding-bottom'>
+          <h2 className='center'>Organisations that use HXL</h2>
           <Organizations />
         </section>
 

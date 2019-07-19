@@ -302,8 +302,12 @@ table {
 	}
 }
 
-pre {
+pre,
+code {
 	background-color: #edf0f3;
+}
+
+pre {
     padding: 10px;
 }
 
@@ -311,6 +315,7 @@ figure {
 	margin: 0;
 	figcaption {
 		font-size: type-scale(5);
+		line-height: 18px;
 		font-style: italic;
 		padding: 5px 0 20px;
 	}
@@ -326,6 +331,10 @@ figure {
 @media only screen and (max-width: $system__breakpoint--small) {
 	section {
 		padding: 25px 0;
+		img {
+			height: auto;
+			width: 100%;
+		}
 	}
 	.btn {
 		&.btn--primary {
@@ -335,7 +344,7 @@ figure {
 	}
 	.hero {
 		background-size: 40px 40px, 40px 40px;
-		padding: 109px 0 25px;
+		padding: 25px 0;
 	}
 	.hero__inner {
 		grid-column: 1 / -1;
@@ -379,5 +388,10 @@ figure {
 		white-space: -pre-wrap;      
 		white-space: -o-pre-wrap;    
 		word-wrap: break-word;
+	}
+	figure {
+		img {
+			width: 100%;
+		}
 	}
 }

@@ -30,14 +30,21 @@ class FAQ extends Component{
             }
             faqGroups[group].push(obj);
           })
-          
+
+          //sort group names 
+          let groupNames = [];
+          Object.keys(faqGroups).map(group => {
+            groupNames.push(group);
+          });
+          groupNames.sort();
+
           return (
             <div id="faq">
               <h2>FAQ</h2>
               {/*<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad <a href='/'>minim veniam</a></p>*/}
               
               {
-                Object.keys(faqGroups).map((group, index) => {
+                groupNames.map((group, index) => {
                   return (
                     <React.Fragment key={index}>
                       <h3>{group}</h3>

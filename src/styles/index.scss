@@ -37,6 +37,10 @@ section {
 	> section {
 		padding-bottom: 0;
 	}
+	img {
+		height: auto;
+		max-width: 100%;
+	}
 	&.background-gray {
 		background-color: $color__gray-light;
 	}

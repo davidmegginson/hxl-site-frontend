@@ -23,7 +23,7 @@ export default ({ data }) => {
           </div>
         </section>
 
-        <section className='background-gray'>
+        <section className='tutorial background-gray'>
           <h2 className='center'>The 30-second HXL Tutorial</h2>
           <div className='grid-container'>
             <div className='col-4 tutorial__step'>
@@ -41,7 +41,7 @@ export default ({ data }) => {
           </div>
           <div className='center'>
             <p className='small'>Not sure which HXL tag to use? See <a href='/standard/dictionary/'>HXL hashtags in action classifying datasets</a>.<br/>Then, HXL-ate your own spreadsheets.</p>
-            <a href='https://tools.humdata.org/examples/hxl/' target='_blank' className='btn btn--primary'>Open HXL Tag Assist</a>
+            <a href='./how-it-works/' className='btn btn--primary'>See how it works</a>
           </div>
         </section>
 

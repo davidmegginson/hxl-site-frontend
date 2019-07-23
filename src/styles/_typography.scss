@@ -36,7 +36,7 @@ h3 {
 h4 { 
 	font-size: type-scale(4);
 	line-height: 22px;
-	margin: 0;
+	margin: 10px 0;
 }
 
 h5 {
@@ -44,41 +44,6 @@ h5 {
 	line-height: 18px;
 	margin: 0;
 }
-// h1 {
-// 	color: $color__gray-medium;
-// 	font-size: type-scale(1);
-// 	line-height: 43px;
-// }
-
-// h2 {
-// 	font-family: 'Stag-Medium';
-// 	font-size: type-scale(2);
-// 	line-height: 60px;
-// }
-
-// h3 {
-// 	font-size: type-scale(3);
-// 	line-height: 46px;
-// 	margin: 30px 0;
-// }
-
-// h4 {
-// 	font-size: type-scale(4);
-// 	line-height: 34px;
-// 	margin: 25px 0;
-// }
-
-// h5 {
-// 	font-size: type-scale(5);
-// 	line-height: 24px;
-// 	margin: 40px 0 20px;
-// }
-
-// h6 {
-// 	font-size: 14px;
-// 	line-height: 18px;
-// 	margin: 0;
-// }
 
 a {
 	color: $color__coral;
@@ -114,7 +79,6 @@ p {
 	h2 {
 		font-size: 20px;
 		line-height: 24px;
-		margin: 20px 0;
 	}
 	h3 {
 		font-size: 14px;

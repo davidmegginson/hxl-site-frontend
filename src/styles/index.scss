@@ -335,6 +335,19 @@ figure {
 			height: auto;
 			width: 100%;
 		}
+		> h2 + section {
+			padding-top: 0;
+		}
+	}
+	.blurb {
+		.logo {
+			img {
+				width: auto;
+			}
+		}
+	}
+	.tutorial {
+		padding: 0 20px;
 	}
 	.btn {
 		&.btn--primary {
@@ -355,14 +368,6 @@ figure {
 		h3 {
 			line-height: 18px;
 			padding: 0 10px;
-		}
-	}
-	.tutorial__step {
-		img {
-			width: 60%;
-		}
-		h3{
-			margin: 25px 50px;
 		}
 	}
 	.sidebar {

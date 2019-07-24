@@ -26,7 +26,7 @@ class FAQ extends Component{
             };
             let group = item.node.acf.faq_group;
             if (faqGroups[group]===undefined) {
-              faqGroups[group] = new Array();
+              faqGroups[group] = [];
             }
             faqGroups[group].push(obj);
           })
@@ -41,8 +41,6 @@ class FAQ extends Component{
           return (
             <div id="faq">
               <h2>FAQ</h2>
-              {/*<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad <a href='/'>minim veniam</a></p>*/}
-              
               {
                 groupNames.map((group, index) => {
                   return (

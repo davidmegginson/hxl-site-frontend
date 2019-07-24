@@ -14,9 +14,9 @@ class Footer extends Component {
     				<section className='call-to-action'>
 		          <div className='grid-container center--vertical'>
 		            <div className='col-7'>
-		              <h3>Ready to try using HXL tags?</h3>
-		              <h1>Call to action call to action</h1>
-		              <button className='btn btn--secondary'>Sign up for demo</button>
+		              <h3>Ready to use HXL Standard?</h3>
+		              <h1>Join  the HXL Community and participate in the latest discussions</h1>
+		              <a href='https://groups.google.com/forum/#!forum/hxlproject' target='_blank' className='btn btn--secondary' aria-label='Join HXL Group' rel="noopener noreferrer">Join the HXL Group</a>
 		            </div>
 		            <div className='col-5'>
 		              <img src={cta} width='400' alt='CTA' />

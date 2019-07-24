@@ -3,7 +3,7 @@ import React from "react"
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Organizations from '../components/organizations'
-import Testimonials from '../components/testimonials'
+//import Testimonials from '../components/testimonials'
 import SEO from '../components/seo'
 
 export default ({ data }) => {
@@ -18,7 +18,7 @@ export default ({ data }) => {
           <div className='grid-container'>
             <div className='hero__inner'>
               <h1 className='special'>The Humanitarian Exchange Language</h1>
-              <h3>A simple standard for messy data</h3>
+              <h3>{data.wordpressSiteMetadata.description}</h3>
             </div>
           </div>
         </section>
@@ -28,20 +28,20 @@ export default ({ data }) => {
           <div className='grid-container'>
             <div className='col-4 tutorial__step'>
               <img src='./images/tutorial-1.png' alt='' />
-              <h3><a href='/'><div className='bullet--number'><span>1</span></div>Grab a spreadsheet of humanitarian data</a></h3>
+              <h3 className='type__color-coral'><div className='bullet--number'><span>1</span></div>Grab a spreadsheet of humanitarian data</h3>
             </div>
             <div className='col-4 tutorial__step'>
               <img src='./images/tutorial-2.png' alt='' />
-              <h3><a href='/'><div className='bullet--number'><span>2</span></div>Insert a new row between the headers and the data</a></h3>
+              <h3 className='type__color-coral'><div className='bullet--number'><span>2</span></div>Insert a new row between the headers and the data</h3>
             </div>
             <div className='col-4 tutorial__step'>
               <img src='./images/tutorial-3.png' alt='' />
-              <h3><a href='/'><div className='bullet--number'><span>3</span></div>Add some HXL tags</a></h3>
+              <h3 className='type__color-coral'><div className='bullet--number'><span>3</span></div>Add some HXL tags</h3>
             </div>
           </div>
           <div className='center'>
-            <p className='small'>Not sure which HXL tag to use? See <a href='/standard/dictionary/'>HXL hashtags in action classifying datasets</a>.<br/>Then, HXL-ate your own spreadsheets.</p>
-            <a href='./how-it-works/' className='btn btn--primary'>See how it works</a>
+            <p className='small'>Not sure which HXL tag to use? See <a href='/standard/dictionary/' aria-label='HXL Dictionary'>HXL hashtags in action classifying datasets</a>.<br/>Then, HXL-ate your own spreadsheets.</p>
+            <a href='./how-it-works/' className='btn btn--primary' aria-label='How it works'>See how it works</a>
           </div>
         </section>
 
@@ -61,16 +61,10 @@ export default ({ data }) => {
   )
 }
 
-// export const pageQuery = graphql`
-//   query {
-//     allWordpressPost(sort: { fields: [date] }) {
-//       edges {
-//         node {
-//           title
-//           excerpt
-//           slug
-//         }
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query {
+    wordpressSiteMetadata {
+      description
+    }
+  }
+`

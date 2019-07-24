@@ -12,7 +12,7 @@ exports.onCreateWebpackConfig = ({ actions, stage }) => {
 module.exports = {
   pathPrefix: `/hxl-redesign`,
   siteMetadata: {
-    title: `HXL`,
+    title: `Humanitarian Exchange Language`,
     description: `HXL is a different kind of data standard, designed to improve information sharing during a humanitarian crisis without adding extra reporting burdens.`,
     author: `@humdata`,
   },

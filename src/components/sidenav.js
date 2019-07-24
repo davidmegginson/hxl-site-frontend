@@ -1,5 +1,4 @@
 import React, { Component }  from 'react'
-import { StaticQuery, graphql, Link } from 'gatsby'
 
 class Sidenav extends Component{
   render() {

@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { graphql } from 'gatsby'
+import { withMixpanel } from 'gatsby-plugin-mixpanel'
 
 import Header from '../components/header'
 import Sidenav from '../components/sidenav'
@@ -9,6 +10,15 @@ import SEO from '../components/seo'
 
 
 class PageTemplate extends Component {
+  componentDidMount() {
+    const { mixpanel } = this.props;
+    var mixpanelTrackData = {
+      'page title': this.props.data.wordpressPage.title,
+      'page type': 'page'
+    };
+    mixpanel.track('page view', mixpanelTrackData);
+  }
+
   render() {
     const page = this.props.data.wordpressPage;
 
@@ -43,7 +53,7 @@ class PageTemplate extends Component {
   }
 }
 
-export default PageTemplate
+export default withMixpanel()(PageTemplate)
 
 export const pageQuery = graphql`
   query currentPageQuery($id: String!) {

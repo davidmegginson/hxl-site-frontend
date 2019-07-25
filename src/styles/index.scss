@@ -69,7 +69,6 @@ section {
 	}
 	h3 {
 		line-height: 35px;
-		padding: 0 80px;
 	}
 }
 
@@ -112,14 +111,16 @@ section {
 		line-height: 40px;
 		padding: 0 17px;
 	}
-	&:after {
-		background: url('../assets/images/icon-external.svg') no-repeat;
-		background-size: contain;
-		content: '';
-		display: inline-block;
-		margin-left: 10px;
-		width: 12px;
-		height: 12px;
+	&.btn--external {
+		&:after {
+			background: url('../assets/images/icon-external.svg') no-repeat;
+			background-size: contain;
+			content: '';
+			display: inline-block;
+			margin-left: 10px;
+			width: 12px;
+			height: 12px;
+		}
 	}
 }
 

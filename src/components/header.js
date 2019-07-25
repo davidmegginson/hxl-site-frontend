@@ -32,9 +32,8 @@ class Header extends Component{
 
   render() {
     let page = this.props.page;
-    let parentPath = null;
-    let parentSlug = null;
-
+    // let parentPath = null;
+    // let parentSlug = null;
     //manually create breadcrumb for pages under 'specifications'
     // if (page && page.path != undefined) {
     //   parentPath = page.path.substring(0, page.path.indexOf(page.slug));

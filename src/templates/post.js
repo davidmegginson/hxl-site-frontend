@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { graphql } from 'gatsby'
+import { withMixpanel } from 'gatsby-plugin-mixpanel'
 
 import Header from '../components/header'
 import Sidenav from '../components/sidenav'
@@ -8,6 +9,15 @@ import SEO from '../components/seo'
 
 
 class PostTemplate extends Component {
+  componentDidMount() {
+    const { mixpanel } = this.props;
+    var mixpanelTrackData = {
+      'page title': this.props.data.wordpressPost.title,
+      'page type': 'post'
+    };
+    mixpanel.track('page view', mixpanelTrackData);
+  }
+
   render() {
     const post = this.props.data.wordpressPost
 
@@ -37,14 +47,15 @@ class PostTemplate extends Component {
   }
 }
 
-
-export default PostTemplate
+export default withMixpanel()(PostTemplate)
 
 export const postQuery = graphql`
   query currentPostQuery($id: String!) {
     wordpressPost(id: { eq: $id }) {
+      slug
       title
       content
+      path
       acf{
         linkGroup{
           links{

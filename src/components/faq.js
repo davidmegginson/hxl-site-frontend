@@ -55,7 +55,7 @@ class FAQ extends Component{
                                 <h3>{item.question}</h3>
                               </AccordionItemTitle>
                               <AccordionItemBody>
-                                <p>{item.answer}</p>
+                                {item.answer}
                               </AccordionItemBody>
                             </AccordionItem>
                           )

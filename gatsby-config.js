@@ -1,3 +1,9 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+console.log(`Using environment config: '${process.env.NODE_ENV}'`)
+
 // gatsby-node.js
 exports.onCreateWebpackConfig = ({ actions, stage }) => {
   if (stage === 'build-javascript') {
@@ -8,9 +14,8 @@ exports.onCreateWebpackConfig = ({ actions, stage }) => {
   }
 };
 
-
 module.exports = {
-  pathPrefix: `/hxl-redesign`,
+  //pathPrefix: `/hxl-redesign`,
   siteMetadata: {
     title: `Humanitarian Exchange Language`,
     description: `HXL is a different kind of data standard, designed to improve information sharing during a humanitarian crisis without adding extra reporting burdens.`,
@@ -43,7 +48,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        baseUrl: `blog.dev.hxlstandard.org`,
+        baseUrl: process.env.API_URL,
         protocol: `http`,
         hostingWPCOM: false,
         useACF: true,
@@ -78,6 +83,16 @@ module.exports = {
         //     }
         //   }
         // ]
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-mixpanel',
+      options: {
+        apiToken: process.env.MIXPANEL_TOKEN,
+        enableOnDevMode: true,
+        mixpanelConfig: null,
+        pageViews: null,
+        trackPageViewsAs: 'page view'
       },
     },
     `gatsby-plugin-sass`,

@@ -15,7 +15,7 @@ exports.onCreateWebpackConfig = ({ actions, stage }) => {
 };
 
 module.exports = {
-  //pathPrefix: `/hxl-redesign`,
+  pathPrefix: `/hxl-redesign`,
   siteMetadata: {
     title: `Humanitarian Exchange Language`,
     description: `HXL is a different kind of data standard, designed to improve information sharing during a humanitarian crisis without adding extra reporting burdens.`,
@@ -48,7 +48,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        baseUrl: process.env.API_URL,
+        baseUrl: `blog.dev.hxlstandard.org`,
         protocol: `http`,
         hostingWPCOM: false,
         useACF: true,

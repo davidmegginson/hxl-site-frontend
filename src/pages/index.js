@@ -11,8 +11,6 @@ import SEO from '../components/seo'
 
 class Home extends Component {
   componentDidMount() {
-    console.log('token',process.env.MIXPANEL_LOCAL_TOKEN);
-
     const { mixpanel } = this.props;
     var mixpanelTrackData = {
       'page title': 'The Humanitarian Exchange Language',

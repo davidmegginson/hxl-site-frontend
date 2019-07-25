@@ -2,7 +2,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-console.log(`Using environment config: '${process.env.NODE_ENV}'`)
+console.log(`Using environment config: '${process.env.NODE_ENV}', ${process.env.MIXPANEL_TOKEN}`)
 
 // gatsby-node.js
 exports.onCreateWebpackConfig = ({ actions, stage }) => {
@@ -15,7 +15,7 @@ exports.onCreateWebpackConfig = ({ actions, stage }) => {
 };
 
 module.exports = {
-  pathPrefix: `/hxl-redesign`,
+  //pathPrefix: `/hxl-redesign`,
   siteMetadata: {
     title: `Humanitarian Exchange Language`,
     description: `HXL is a different kind of data standard, designed to improve information sharing during a humanitarian crisis without adding extra reporting burdens.`,

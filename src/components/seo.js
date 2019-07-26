@@ -52,15 +52,15 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 name: `og:image`,
-                content: `http://www.dev.hxlstandard.org/icons/icon-512x512.png`,
+                content: `http://www.dev.hxlstandard.org/images/og_hxl_solid.jpg`,
               },
               {
                 name: `og:width`,
-                content: `512`,
+                content: `1200`,
               },
               {
                 name: `og:height`,
-                content: `512`,
+                content: `630`,
               },
 
             ]

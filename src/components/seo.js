@@ -50,6 +50,19 @@ function SEO({ description, lang, meta, keywords, title }) {
                 name: `twitter:description`,
                 content: metaDescription,
               },
+              {
+                name: `og:image`,
+                content: `http://www.dev.hxlstandard.org/images/og_hxl_solid.jpg`,
+              },
+              {
+                name: `og:width`,
+                content: `1200`,
+              },
+              {
+                name: `og:height`,
+                content: `630`,
+              },
+
             ]
               .concat(
                 keywords.length > 0

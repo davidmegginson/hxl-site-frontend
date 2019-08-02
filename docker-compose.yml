@@ -1,0 +1,13 @@
+version: '2.1'
+
+services:
+  gatsby:
+    image: unocha/hxl-gatsby:dev
+    entrypoint: sleep 14400
+    volumes:
+      - "./:/srv/www"
+    ports:
+      - "0.0.0.0:8000:8000"
+    env_file:
+      - ".env.development"
+      - ".env.production"

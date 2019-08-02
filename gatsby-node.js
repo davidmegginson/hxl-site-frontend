@@ -56,7 +56,7 @@ exports.createPages = async ({ graphql, actions }) => {
     // Plugins and sites can use functions like "createPage"
     // to interact with Gatsby.
 
-    let link = edge.node.link.split('http://hxl2.local/')[1];
+    let link = edge.node.link.split('http://blog.dev.hxlstandard.org/')[1];
     createPage({
       // Each page is required to have a `path` as well
       // as a template component. The `context` is

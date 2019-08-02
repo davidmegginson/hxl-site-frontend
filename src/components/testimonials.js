@@ -17,7 +17,7 @@ const Testimonials = ({ data }) => (
             </div>
             <div className='org'>
               <div className='org__logo'><img src={logo} alt='logo' /></div>
-              <h6>{item.node.title}</h6>
+              <h5>{item.node.title}</h5>
             </div>
           </blockquote>
         </div>

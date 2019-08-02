@@ -12,9 +12,20 @@
 
 *,*:before,*:after{ box-sizing: border-box; }
 
+
+html,
 body {
-	background-color: $color__gray-light;
+	height: 100%;
+}
+
+body {
+	background-color: $color__white;
 	margin: 0;
+}
+
+#___gatsby,
+#___gatsby > div {
+	height: 100%;
 }
 
 .center {
@@ -22,7 +33,20 @@ body {
 }
 
 section {
-	padding: 38px 0;
+	padding: 16px 0;
+	> section {
+		padding-bottom: 0;
+	}
+	img {
+		height: auto;
+		max-width: 100%;
+	}
+	&.background-gray {
+		background-color: $color__gray-light;
+	}
+	&.padding-bottom {
+		padding-bottom: 50px;
+	}
 }
 
 .hero {
@@ -43,9 +67,8 @@ section {
 		color: $color__gray-medium;
 		padding-bottom: 5px;
 	}
-	h5 {
+	h3 {
 		line-height: 35px;
-		padding: 0 80px;
 	}
 }
 
@@ -61,7 +84,7 @@ section {
 	span {
 		color: $color__white;
 		display: block;
-		font-size: type-scale(6);
+		font-size: type-scale(5);
 		position: absolute;
 		left: 50%;
 		top: 50%;
@@ -75,26 +98,29 @@ section {
 	border-radius: 10px;
 	color: $color__white;
 	cursor: pointer;
+	display: inline-block;
 	font-family: 'Stag-Book';
 	text-transform: uppercase;
 	&.btn--primary {
 		font-size: type-scale(0);
-		height: 60px;
+		line-height: 60px;
 		padding: 0 38px;
 	}
 	&.btn--secondary {
-		font-size: type-scale(6);
-		height: 40px;
+		font-size: type-scale(5);
+		line-height: 40px;
 		padding: 0 17px;
 	}
-	&:after {
-		background: url('../assets/images/icon-external.svg') no-repeat;
-		background-size: contain;
-		content: '';
-		display: inline-block;
-		margin-left: 10px;
-		width: 12px;
-		height: 12px;
+	&.btn--external {
+		&:after {
+			background: url('../assets/images/icon-external.svg') no-repeat;
+			background-size: contain;
+			content: '';
+			display: inline-block;
+			margin-left: 10px;
+			width: 12px;
+			height: 12px;
+		}
 	}
 }
 
@@ -145,7 +171,7 @@ blockquote {
 		border-radius: 0 0 10px 10px;
 		color: $color__white;
 		display: flex;
-		font-size: type-scale(6);
+		font-size: type-scale(5);
 		line-height: 18px;
 		padding: 16px;
 		.org__logo {
@@ -175,7 +201,7 @@ blockquote {
   display: flex;
   flex-flow: column;
   text-align: center;
-  h5 {
+  h3 {
   	margin: 25px 0 50px;
   }
   img {
@@ -206,13 +232,21 @@ blockquote {
 	p {
 		margin-bottom: 5px;
 	}
-	h6 {
+	h4 {
 		display: inline-block;
+		margin: 15px 0 5px;
 	}
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
 
 .viewport-container {
 	background-color: $color__white;
+	flex: 1 0 auto;
 	overflow: scroll;
 }
 
@@ -224,25 +258,101 @@ blockquote {
 .main-content {
 	grid-column: 4 / span 9;
 	padding-top: 12px;
+	&.full-width {
+		grid-column: 1 / span 12;
+	}
 }
 
 .call-to-action {
 	background-color: #F2F2F2;
 	grid-column: 1 / span 12;
+	margin-top: 40px;
 	padding: 38px 0;
-	h5 {
+	h3 {
 		color: #888;
 	}
-	h3 {
+	h1 {
 		color: $color__coral;
 		margin: 0 0 20px;
 	}
 }
 
+dl {
+	dt {
+		margin-bottom: 5px;
+	}
+	dd {
+		margin-bottom: 15px;
+		margin-left: 0;
+	}
+}
+
+table {
+	border-collapse: collapse;
+    border-spacing: 0;
+    margin: 20px 0;
+	width: 100%;
+	th,
+	td {
+	    border-color: #AAA;
+	    border-style: solid;
+	    border-width: 0.5px;
+	    text-align: left;
+	    padding: 5px;
+	}
+	tr {
+		&.hxl {
+			background-color: #fcf2f2;
+		}
+	}
+}
+
+pre,
+code {
+	background-color: #edf0f3;
+}
+
+pre {
+    padding: 10px;
+}
+
+figure {
+	margin: 0;
+	figcaption {
+		font-size: type-scale(5);
+		line-height: 18px;
+		font-style: italic;
+		padding: 5px 0 20px;
+	}
+}
+
+.gatsby-image-wrapper {
+	margin-bottom: 20px;
+	> a > img {
+		display: none;
+	}
+}
 
 @media only screen and (max-width: $system__breakpoint--small) {
 	section {
-		padding: 25px 0 50px;
+		padding: 25px 0;
+		img {
+			height: auto;
+			width: 100%;
+		}
+		> h2 + section {
+			padding-top: 0;
+		}
+	}
+	.blurb {
+		.logo {
+			img {
+				width: auto;
+			}
+		}
+	}
+	.tutorial {
+		padding: 0 20px;
 	}
 	.btn {
 		&.btn--primary {
@@ -252,7 +362,7 @@ blockquote {
 	}
 	.hero {
 		background-size: 40px 40px, 40px 40px;
-		padding: 109px 0 25px;
+		padding: 25px 0;
 	}
 	.hero__inner {
 		grid-column: 1 / -1;
@@ -260,17 +370,9 @@ blockquote {
 		a {
 			padding-bottom: 2px;
 		}
-		h5 {
+		h3 {
 			line-height: 18px;
 			padding: 0 10px;
-		}
-	}
-	.tutorial__step {
-		img {
-			width: 60%;
-		}
-		h5{
-			margin: 25px 50px;
 		}
 	}
 	.sidebar {
@@ -279,15 +381,27 @@ blockquote {
 	.main-content {
 		grid-column: 1 / -1;
 		padding: 0 20px;
-		> h3, > h4, > h5 {
+		> h1, > h2, > h3 {
 			text-align: center;
 		}
 	}
 	.call-to-action {
+		padding: 20px 20px 40px;
 		text-align: center;
 		img {
 			margin-top: 40px;
-			width: 80%;
+		}
+	}
+	pre {
+		white-space: pre-wrap;      
+		white-space: -moz-pre-wrap; 
+		white-space: -pre-wrap;      
+		white-space: -o-pre-wrap;    
+		word-wrap: break-word;
+	}
+	figure {
+		img {
+			width: 100%;
 		}
 	}
 }

@@ -2,7 +2,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-console.log(`Using environment config: '${process.env.NODE_ENV}', ${process.env.MIXPANEL_TOKEN}`)
+console.log(`Using environment config: '${process.env.NODE_ENV}', ${process.env.API_URL}`)
 
 // gatsby-node.js
 exports.onCreateWebpackConfig = ({ actions, stage }) => {
@@ -48,7 +48,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        baseUrl: `blog.dev.hxlstandard.org`,
+        baseUrl: process.env.API_URL,
         protocol: `http`,
         hostingWPCOM: false,
         useACF: true,

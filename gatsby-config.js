@@ -3,6 +3,7 @@ require("dotenv").config({
 })
 
 console.log(`Using environment config: '${process.env.NODE_ENV}', ${process.env.API_URL}`)
+process.env.API_URL = (process.env.API_URL===undefined) ? 'blog.dev.hxlstandard.org' : process.env.API_URL;
 
 // gatsby-node.js
 exports.onCreateWebpackConfig = ({ actions, stage }) => {

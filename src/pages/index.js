@@ -49,11 +49,11 @@ class Home extends Component {
               </div>
               <div className='col-4 tutorial__step'>
                 <img src='./images/tutorial-3.png' alt='' />
-                <h3 className='type__color-coral'><div className='bullet--number'><span>3</span></div>Add some HXL tags</h3>
+                <h3 className='type__color-coral'><div className='bullet--number'><span>3</span></div>Add some HXL hashtags</h3>
               </div>
             </div>
             <div className='center'>
-              <p className='small'>Not sure which HXL tag to use? See <a href='/standard/dictionary/' aria-label='HXL Dictionary'>HXL hashtags in action classifying datasets</a>.<br/>Then, HXL-ate your own spreadsheets.</p>
+              <p className='small'>Not sure which HXL hashtag to use? See <a href='/standard/dictionary/' aria-label='HXL Dictionary'>HXL hashtags in action classifying datasets</a>.<br/>Then, HXLate your own spreadsheets.</p>
               <a href='./how-it-works/' className='btn btn--primary' aria-label='How it works'>See how it works</a>
             </div>
           </section>

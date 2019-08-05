@@ -12,7 +12,7 @@ const Organizations = ({ data }) => (
           </div>
           <div className='org'>
             <h4>{item.node.title}</h4>
-            <h5><a href={item.node.acf.hdxurl} className='external' target='_blank' rel='noopener noreferrer'>See hxlated dataset on HDX</a></h5>
+            <h5><a href={item.node.acf.hdxurl} className='external' target='_blank' rel='noopener noreferrer'>See HXLated dataset on HDX</a></h5>
           </div>
         </div>
       )

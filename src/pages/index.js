@@ -53,7 +53,7 @@ class Home extends Component {
               </div>
             </div>
             <div className='center'>
-              <p className='small'>Not sure which HXL hashtag to use? See <a href='/standard/dictionary/' aria-label='HXL Dictionary'>HXL hashtags in action classifying datasets</a>.<br/>Then, HXLate your own spreadsheets.</p>
+              <p className='small'>Not sure which HXL hashtag to use? See <a href='/standard/1-1final/dictionary/' aria-label='HXL Dictionary'>HXL hashtags in action classifying datasets</a>.<br/>Then, HXLate your own spreadsheets.</p>
               <a href='./how-it-works/' className='btn btn--primary' aria-label='How it works'>See how it works</a>
             </div>
           </section>

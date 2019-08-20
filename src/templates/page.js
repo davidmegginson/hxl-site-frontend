@@ -8,6 +8,9 @@ import Footer from '../components/footer'
 import Faq from '../components/faq'
 import SEO from '../components/seo'
 
+import { getStaticImages } from '../scripts/helpers.js'
+
+import hxlDemo from '../assets/images/hxl_demo.gif'
 
 class PageTemplate extends Component {
   componentDidMount() {
@@ -17,6 +20,11 @@ class PageTemplate extends Component {
       'page type': 'page'
     };
     mixpanel.track('page view', mixpanelTrackData);
+
+    //replace wp images with static images
+    var listOfStaticImages = this.props.data.allWordpressWpMedia.edges;
+    var images = document.getElementsByTagName('img');
+    getStaticImages(images, listOfStaticImages);
   }
 
   render() {
@@ -77,6 +85,21 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    allWordpressWpMedia {
+      edges {
+        node {
+          source_url
+          localFile {
+            childImageSharp {
+              sizes {
+                src
+                originalImg
+              }
+            } 
+          }
+        }
       }
     }
   }

@@ -8,6 +8,8 @@ import Organizations from '../components/organizations'
 //import Testimonials from '../components/testimonials'
 import SEO from '../components/seo'
 
+import { getStaticImages } from '../scripts/helpers.js'
+
 
 class Home extends Component {
   componentDidMount() {
@@ -17,6 +19,11 @@ class Home extends Component {
       'page type': 'home'
     };
     mixpanel.track('page view', mixpanelTrackData);
+
+    //replace wp images with static images
+    var listOfStaticImages = this.props.data.allWordpressWpMedia.edges;
+    var images = document.getElementsByTagName('img');
+    getStaticImages(images, listOfStaticImages);
   }
 
   render() {
@@ -81,6 +88,21 @@ export const pageQuery = graphql`
   query {
     wordpressSiteMetadata {
       description
+    }
+    allWordpressWpMedia {
+      edges {
+        node {
+          source_url
+          localFile {
+            childImageSharp {
+              sizes {
+                src
+                originalImg
+              }
+            } 
+          }
+        }
+      }
     }
   }
 `

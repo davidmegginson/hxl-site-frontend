@@ -50,7 +50,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         baseUrl: process.env.API_URL,
-        protocol: `http`,
+        protocol: `https`,
         hostingWPCOM: false,
         useACF: true,
         backgroundColor: `white`,
@@ -76,10 +76,10 @@ module.exports = {
         //   {
         //     resolve: `gatsby-wordpress-inline-images`,
         //     options: {
-        //       baseUrl: `blog.dev.hxlstandard.org`,
+        //       baseUrl: process.env.API_URL,
         //       protocol: `http`,
         //       backgroundColor: `white`,
-        //       maxWidth: 650,
+        //       maxWidth: 1150,
         //       wrapperStyle: `gatsby-image-wrapper`,
         //     }
         //   }

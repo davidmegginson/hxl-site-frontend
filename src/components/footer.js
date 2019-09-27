@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import ochaLogo from '../assets/images/logo-ocha-lockup-white.png'
-import cta from "../assets/images/call-to-action.png"
+import cta from '../assets/images/call-to-action.png'
 
 class Footer extends Component {
   

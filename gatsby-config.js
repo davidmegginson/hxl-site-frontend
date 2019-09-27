@@ -2,8 +2,8 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-console.log(`Using environment config: '${process.env.NODE_ENV}', ${process.env.API_URL}`)
 process.env.API_URL = (process.env.API_URL===undefined) ? 'blog.dev.hxlstandard.org' : process.env.API_URL;
+console.log(`Using environment config: '${process.env.NODE_ENV}', ${process.env.API_URL}`)
 
 // gatsby-node.js
 exports.onCreateWebpackConfig = ({ actions, stage }) => {
@@ -50,15 +50,13 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         baseUrl: process.env.API_URL,
-        protocol: `http`,
+        protocol: `https`,
         hostingWPCOM: false,
         useACF: true,
         backgroundColor: `white`,
         verboseOutput: false,
         excludedRoutes: [
           "/acf/v3/categories",
-          "/acf/v3/tags/",
-          "/acf/v3/comments/",
           "/acf/v3/options/",
           "/acf/v3/users/",
           "/wp/v2/users/me", 
@@ -71,19 +69,8 @@ module.exports = {
           "**/*/*/search",
           "**/*/*/tags",
           "**/*/*/blocks",
-        ],
-        // plugins: [
-        //   {
-        //     resolve: `gatsby-wordpress-inline-images`,
-        //     options: {
-        //       baseUrl: `blog.dev.hxlstandard.org`,
-        //       protocol: `http`,
-        //       backgroundColor: `white`,
-        //       maxWidth: 650,
-        //       wrapperStyle: `gatsby-image-wrapper`,
-        //     }
-        //   }
-        // ]
+          "/wp/v2/block-renderer/block-renderer/**/*",
+        ]
       },
     },
     {

@@ -38,13 +38,14 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+
   // Check for any errors
   if (result.errors) {
     throw new Error(result.errors)
   }
 
   // Access query results via object destructuring
-  const { allWordpressPage, allWordpressPost } = result.data
+  const { allWordpressPage, allWordpressPost, allWordpressWpMedia } = result.data
 
   // Create Page pages.
   const pageTemplate = path.resolve(`./src/templates/page.js`)

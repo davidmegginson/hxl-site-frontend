@@ -8,7 +8,7 @@ import Footer from '../components/footer'
 import Faq from '../components/faq'
 import SEO from '../components/seo'
 
-import { getStaticImages } from '../scripts/helpers.js'
+import { getStaticImages, getStaticPDFs } from '../scripts/helpers.js'
 
 import hxlDemo from '../assets/images/hxl_demo.gif'
 
@@ -25,6 +25,10 @@ class PageTemplate extends Component {
     var listOfStaticImages = this.props.data.allWordpressWpMedia.edges;
     var images = document.getElementsByTagName('img');
     getStaticImages(images, listOfStaticImages);
+
+    var pdfList = this.props.data.allFile.edges;
+    var files = document.getElementsByTagName('a');
+    getStaticPDFs(files, pdfList);
   }
 
   render() {
@@ -45,6 +49,15 @@ class PageTemplate extends Component {
 
               <div className={page.acf.linkGroup ? 'main-content' : 'main-content full-width'}>
                 <h1 dangerouslySetInnerHTML={{ __html: page.title }} />
+
+                { /* animated gif for HXL demo */
+                  page.slug==='how-it-works' &&
+                    <figure id='fig.tagging'>
+                      <figure><img src={hxlDemo} alt='HXL Demo' width='800' /></figure>
+                      <figcaption>Figure 1: Adding a row of HXL hashtags to an existing dataset.</figcaption>
+                    </figure>
+                }
+                
                 <div dangerouslySetInnerHTML={{ __html: page.content }} />
 
                 {
@@ -71,8 +84,8 @@ export const pageQuery = graphql`
       content
       path
       acf{
-        linkGroup{
-          links{
+        linkGroup {
+          links {
             link {
               title
               url
@@ -99,6 +112,14 @@ export const pageQuery = graphql`
               }
             } 
           }
+        }
+      }
+    }
+    allFile(filter: { extension: { eq: "pdf" } }) {
+      edges {
+        node {
+          name
+          publicURL
         }
       }
     }

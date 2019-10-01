@@ -5595,14 +5595,6 @@ gatsby-transformer-sharp@^2.2.0:
     semver "^5.6.0"
     sharp "^0.22.1"
 
-gatsby-wordpress-inline-images@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-wordpress-inline-images/-/gatsby-wordpress-inline-images-1.0.0.tgz#c6d67936ef53c0fdc3f3400facadcad672a280f7"
-  integrity sha512-RaOQaR2f95jXsfqhV5IXpo5ABRdLvidySLte4WOoRKFHUdVXLeHXr9GQaBgTp9wphqQIJ63hOjLSbmxzYlkfXA==
-  dependencies:
-    "@babel/runtime" "^7.0.0"
-    cheerio "^1.0.0-rc.2"
-
 gatsby@^2.11.7:
   version "2.13.27"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.13.27.tgz#2a45612924071b2d3201f2ce958f194d892f7d8f"

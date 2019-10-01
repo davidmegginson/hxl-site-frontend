@@ -326,17 +326,6 @@ figure {
 	}
 }
 
-.gatsby-image-wrapper {
-	margin-bottom: 20px;
-	> a > img {
-		display: none;
-	}
-	img {
-		//height: auto !important;
-		//max-width: none !important;
-		//width: 100% !important;
-	}
-}
 
 @media only screen and (max-width: $system__breakpoint--small) {
 	section {

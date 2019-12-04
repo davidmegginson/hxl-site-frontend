@@ -2,7 +2,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-process.env.API_URL = (process.env.API_URL===undefined) ? 'blog.dev.hxlstandard.org' : process.env.API_URL;
+process.env.API_URL = 'blog.dev.hxlstandard.org';//(process.env.API_URL===undefined) ? 'blog.dev.hxlstandard.org' : process.env.API_URL;
 console.log(`Using environment config: '${process.env.NODE_ENV}', ${process.env.API_URL}`)
 
 // gatsby-node.js
@@ -22,6 +22,12 @@ module.exports = {
     author: `@humdata`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GA_ID,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

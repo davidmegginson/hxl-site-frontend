@@ -56,9 +56,9 @@ export const postQuery = graphql`
       title
       content
       path
-      acf{
-        linkGroup{
-          links{
+      acf {
+        linkGroup {
+          links {
             link {
               title
               url

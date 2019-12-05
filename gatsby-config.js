@@ -28,15 +28,23 @@ module.exports = {
     //     trackingId: process.env.GA_ID,
     //   },
     // },
+    // {
+    //   resolve: `gatsby-plugin-gtag`,
+    //   options: {
+    //     trackingId: process.env.GA_ID,
+    //     head: false,
+    //     anonymize: true,
+    //   },
+    // },
     {
-      resolve: `gatsby-plugin-gtag`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        // your google analytics tracking id
-        trackingId: process.env.GA_ID,
-        // Puts tracking script in the head instead of the body
-        head: false,
-        // enable ip anonymization
-        anonymize: true,
+        trackingIds: [
+          process.env.GA_ID,
+        ],
+        pluginConfig: {
+          head: false,
+        },
       },
     },
     `gatsby-plugin-react-helmet`,

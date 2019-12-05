@@ -3,7 +3,7 @@ require("dotenv").config({
 })
 
 process.env.API_URL = 'blog.dev.hxlstandard.org';//(process.env.API_URL===undefined) ? 'blog.dev.hxlstandard.org' : process.env.API_URL;
-console.log(`Using environment config: '${process.env.NODE_ENV}', ${process.env.API_URL}`)
+console.log(`Using environment config: '${process.env.NODE_ENV}', ${process.env.API_URL}, ${process.env.GA_ID}`)
 
 // gatsby-node.js
 exports.onCreateWebpackConfig = ({ actions, stage }) => {
@@ -22,10 +22,21 @@ module.exports = {
     author: `@humdata`,
   },
   plugins: [
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: process.env.GA_ID,
+    //   },
+    // },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-gtag`,
       options: {
+        // your google analytics tracking id
         trackingId: process.env.GA_ID,
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // enable ip anonymization
+        anonymize: true,
       },
     },
     `gatsby-plugin-react-helmet`,

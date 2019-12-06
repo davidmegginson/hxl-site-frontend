@@ -38,6 +38,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+
   // Check for any errors
   if (result.errors) {
     throw new Error(result.errors)
@@ -56,13 +57,13 @@ exports.createPages = async ({ graphql, actions }) => {
     // Plugins and sites can use functions like "createPage"
     // to interact with Gatsby.
 
-    let link = edge.node.link.split('http://blog.dev.hxlstandard.org/')[1];
+    let link = edge.node.link.split(process.env.API_URL)[1];
     createPage({
       // Each page is required to have a `path` as well
       // as a template component. The `context` is
       // optional but is often necessary so the template
       // can query data specific to each page.
-      path: `/${link}`,
+      path: `${link}`,
       component: slash(pageTemplate),
       context: {
         id: edge.node.id,

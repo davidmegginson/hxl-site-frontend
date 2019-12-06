@@ -8,7 +8,6 @@ import Footer from '../components/footer'
 import Faq from '../components/faq'
 import SEO from '../components/seo'
 
-
 class PageTemplate extends Component {
   componentDidMount() {
     const { mixpanel } = this.props;
@@ -63,8 +62,8 @@ export const pageQuery = graphql`
       content
       path
       acf{
-        linkGroup{
-          links{
+        linkGroup {
+          links {
             link {
               title
               url

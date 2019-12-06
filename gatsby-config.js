@@ -22,20 +22,6 @@ module.exports = {
     author: `@humdata`,
   },
   plugins: [
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: process.env.GA_ID,
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-plugin-gtag`,
-    //   options: {
-    //     trackingId: process.env.GA_ID,
-    //     head: false,
-    //     anonymize: true,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {

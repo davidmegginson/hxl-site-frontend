@@ -65,6 +65,10 @@ module.exports = {
         useACF: true,
         backgroundColor: `white`,
         verboseOutput: false,
+        auth: {
+          htaccess_user: process.env.API_USER,
+          htaccess_pass: process.env.API_PASS,
+        },
         excludedRoutes: [
           "/acf/v3/categories",
           "/acf/v3/options/",

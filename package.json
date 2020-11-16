@@ -39,6 +39,7 @@
     "build": "rm -rf public && gatsby build",
     "develop": "gatsby develop",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "ghdeploy": "gatsby clean && gh-pages-clean && gatsby build && echo \"$SITE_URL\" > public/CNAME && gh-pages -d public -r \"https://$GH_TOKEN@github.com/$REPO_NAME\" -b $TO_BRANCH",
     "dockerdeploy": "gatsby clean && gatsby build && rsync -av --delete --delete-after public/ /dst",
     "dockerdev": "gatsby develop -H 0.0.0.0",
     "dockerlocalprepare": "echo 'removing old node_modules folder' && rm -rf node_modules && echo 'preparing new node_modules' && apt-get -qy update && apt-get -qy install build-essential && yarn && echo 'Done! Dev away! :)'",

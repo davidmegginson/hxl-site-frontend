@@ -9,6 +9,7 @@ RUN apt-get -qy update && \
     apt-get -qy install \
         build-essential \
         curl \
+        git \
         net-tools \
         rsync \
         software-properties-common && \

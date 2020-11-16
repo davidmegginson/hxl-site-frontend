@@ -61,7 +61,7 @@ export const pageQuery = graphql`
       title
       content
       path
-      acf{
+      acf {
         linkGroup {
           links {
             link {

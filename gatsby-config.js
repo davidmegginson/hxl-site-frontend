@@ -2,7 +2,6 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-process.env.API_URL = 'blog.dev.hxlstandard.org';//(process.env.API_URL===undefined) ? 'blog.dev.hxlstandard.org' : process.env.API_URL;
 console.log(`Using environment config: '${process.env.NODE_ENV}', ${process.env.API_URL}, ${process.env.GA_ID}`)
 
 // gatsby-node.js
@@ -59,7 +58,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        baseUrl: process.env.API_URL,
+        baseUrl: process.env.API_URL || blog.dev.hxlstandard.org,
         protocol: `https`,
         hostingWPCOM: false,
         useACF: true,

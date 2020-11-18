@@ -4,7 +4,8 @@ import { StaticQuery, graphql } from "gatsby"
 const Organizations = ({ data }) => (
   <div className='grid-container'>
     { data.allWordpressWpOrganization.edges.map((item) => {
-      let logo = (item.node.featured_media) ? item.node.featured_media.source_url : null;
+      // let logo = (item.node.featured_media) ? item.node.featured_media.source_url : null;
+      let logo = (item.node.featured_media) ? item.node.featured_media.localFile.childImageSharp.fluid.src : null;
       return (
         <div className='col-3 blurb' key={item.node.slug}>
           <div className='logo'>
@@ -31,6 +32,13 @@ export default props => (
               slug
               featured_media{
                 source_url
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
               }
               acf{
                 hdxurl

@@ -51,7 +51,7 @@ class Header extends Component{
               <OCHAHeader />
               <div className={`primary-nav ${this.state.mobileNavFixed}`}>
                 <div className='grid-container center--vertical'>
-                  <Link to={'/'} className='logo'><img src={logo} alt='HXL logo' /></Link>
+                  <Link to={'/'} className='logo'><img src={logo} alt='HXL Logo' /></Link>
                   <nav aria-labelledby='primary-navigation' ref={this.mobileNavRef} className={this.state.mobileNavOpen ? 'active' : ''}>
                     { data.allWordpressWpApiMenusMenusItems.edges[0].node.items.map((item) => (
                        <Link to={item.url} key={item.title}>{item.title}</Link>

@@ -8,7 +8,7 @@ const slash = require(`slash`)
 // Will create pages for WordPress pages (route : /{slug})
 // Will create pages for WordPress posts (route : /post/{slug})
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
 
   // The “graphql” function allows us to run arbitrary
   // queries against the local WordPress graphql schema. Think of
@@ -92,4 +92,8 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  // Create redirects
+  createRedirect({ fromPath: '/postcards/', toPath: '/standard/postcards/', isPermanent: true });
+  createRedirect({ fromPath: '/standard/postcards/', toPath: '/standard/1-1final/postcards/', isPermanent: true });
 }

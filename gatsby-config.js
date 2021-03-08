@@ -2,7 +2,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-console.log(`Using environment config: '${process.env.NODE_ENV}', ${process.env.API_URL}, ${process.env.GA_ID}`)
+console.log(`Using env config: '${process.env.NODE_ENV}', ${process.env.API_URL}, ${process.env.GA_ID}`)
 
 // gatsby-node.js
 exports.onCreateWebpackConfig = ({ actions, stage }) => {
@@ -99,5 +99,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
+    `gatsby-plugin-client-side-redirect`
   ],
 }

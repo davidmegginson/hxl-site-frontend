@@ -97,6 +97,6 @@ exports.createPages = async ({ graphql, actions }) => {
   createRedirect({ fromPath: '/standard/dictionary/', toPath: '/standard/1-1final/dictionary/', isPermanent: true });
   createRedirect({ fromPath: '/standard/tagging/', toPath: '/standard/1-1final/', isPermanent: true });
   createRedirect({ fromPath: '/standard/', toPath: '/standard/1-1final/tagging/', isPermanent: true });
-  // createRedirect({ fromPath: '/postcards/', toPath: '/standard/postcards/', isPermanent: true });
-  // createRedirect({ fromPath: '/standard/postcards/', toPath: '/standard/1-1final/postcards/', isPermanent: true });
+  createRedirect({ fromPath: '/postcards/', toPath: '/standard/postcards/', isPermanent: true });
+  createRedirect({ fromPath: '/standard/postcards/', toPath: '/standard/1-1final/postcards/', isPermanent: true });
 }

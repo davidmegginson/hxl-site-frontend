@@ -30,7 +30,7 @@ class Home extends Component {
           <section className='hero'>
             <div className='grid-container'>
               <div className='hero__inner'>
-                <h1 className='special'>The Humanitarian Exchange Language</h1>
+                <h1 className='special test'>The Humanitarian Exchange Language</h1>
                 <h3>{this.props.data.wordpressSiteMetadata.description}</h3>
               </div>
             </div>

@@ -119,7 +119,7 @@ exports.createPages = async ({ graphql, actions }) => {
   ];
 
   for (const redirect of redirects) {
-    createRedirect({ fromPath: redirect[0], toPath: redirect[1], redirectInBrowser: true, isPermanent: true });
+    createRedirect({ fromPath: redirect[0], toPath: redirect[1], isPermanent: true });
   }
 
 }

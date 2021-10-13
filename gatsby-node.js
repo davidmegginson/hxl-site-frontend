@@ -94,9 +94,32 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   // Create redirects
-  createRedirect({ fromPath: '/postcards/', toPath: '/standard/postcards/', redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: '/standard/postcards/', toPath: '/standard/1-1final/postcards/', redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: '/standard/dictionary/', toPath: '/standard/1-1final/dictionary/', redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: '/standard/tagging/', toPath: '/standard/1-1final/tagging/', redirectInBrowser: true, isPermanent: true });
-  createRedirect({ fromPath: '/standard/', toPath: '/standard/1-1final/', redirectInBrowser: true, isPermanent: true });
+  const redirects = [
+    [ '/page-data/standard/1_1final/page-data.json', '/page-data/standard/1-1final/page-data.json' ],
+    [ '/postcard', '/standard/1-1final/postcards/' ],
+    [ '/postcard/', '/standard/1-1final/postcards/' ],
+    [ '/postcards', '/standard/1-1final/postcards/' ],
+    [ '/postcards/', '/standard/1-1final/postcards/' ],
+    [ '/standard', '/standard/1-1final/' ],
+    [ '/standard/', '/standard/1-1final/' ],
+    [ '/standard/1_1final', '/standard/1-1final/' ],
+    [ '/standard/1_1final/', '/standard/1-1final/' ],
+    [ '/standard/1_1final/dictionary', '/standard/1-1final/dictionary/' ],
+    [ '/standard/1_1final/dictionary/', '/standard/1-1final/dictionary/' ],
+    [ '/standard/1_1final/postcards', '/standard/1-1final/postcards/' ],
+    [ '/standard/1_1final/postcards/', '/standard/1-1final/postcards/' ],
+    [ '/standard/1_1final/tagging', '/standard/1-1final/tagging/' ],
+    [ '/standard/1_1final/tagging/', '/standard/1-1final/tagging/' ],
+    [ '/standard/dictionary', '/standard/1-1final/dictionary/' ],
+    [ '/standard/dictionary/', '/standard/1-1final/dictionary/' ],
+    [ '/standard/postcards', '/standard/1-1final/postcards/' ],
+    [ '/standard/postcards/', '/standard/1-1final/postcards/' ],
+    [ '/standard/tagging', '/standard/1-1final/tagging/' ],
+    [ '/standard/tagging/', '/standard/1-1final/tagging/' ],
+  ];
+
+  for (const redirect of redirects) {
+    createRedirect({ fromPath: redirect[0], toPath: redirect[1], isPermanent: true });
+  }
+
 }

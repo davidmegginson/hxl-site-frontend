@@ -52,7 +52,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 name: `og:image`,
-                content: `http://www.dev.hxlstandard.org/images/og_hxl_solid.jpg`,
+                content: `/images/og_hxl_solid.jpg`,
               },
               {
                 name: `og:width`,

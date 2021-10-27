@@ -8,7 +8,7 @@ const slash = require(`slash`)
 // Will create pages for WordPress pages (route : /{slug})
 // Will create pages for WordPress posts (route : /post/{slug})
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
 
   // The “graphql” function allows us to run arbitrary
   // queries against the local WordPress graphql schema. Think of
@@ -92,4 +92,34 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  // Create redirects
+  const redirects = [
+    [ '/page-data/standard/1_1final/page-data.json', '/page-data/standard/1-1final/page-data.json' ],
+    [ '/postcard', '/standard/1-1final/postcards/' ],
+    [ '/postcard/', '/standard/1-1final/postcards/' ],
+    [ '/postcards', '/standard/1-1final/postcards/' ],
+    [ '/postcards/', '/standard/1-1final/postcards/' ],
+    [ '/standard', '/standard/1-1final/' ],
+    [ '/standard/', '/standard/1-1final/' ],
+    [ '/standard/1_1final', '/standard/1-1final/' ],
+    [ '/standard/1_1final/', '/standard/1-1final/' ],
+    [ '/standard/1_1final/dictionary', '/standard/1-1final/dictionary/' ],
+    [ '/standard/1_1final/dictionary/', '/standard/1-1final/dictionary/' ],
+    [ '/standard/1_1final/postcards', '/standard/1-1final/postcards/' ],
+    [ '/standard/1_1final/postcards/', '/standard/1-1final/postcards/' ],
+    [ '/standard/1_1final/tagging', '/standard/1-1final/tagging/' ],
+    [ '/standard/1_1final/tagging/', '/standard/1-1final/tagging/' ],
+    [ '/standard/dictionary', '/standard/1-1final/dictionary/' ],
+    [ '/standard/dictionary/', '/standard/1-1final/dictionary/' ],
+    [ '/standard/postcards', '/standard/1-1final/postcards/' ],
+    [ '/standard/postcards/', '/standard/1-1final/postcards/' ],
+    [ '/standard/tagging', '/standard/1-1final/tagging/' ],
+    [ '/standard/tagging/', '/standard/1-1final/tagging/' ],
+  ];
+
+  for (const redirect of redirects) {
+    createRedirect({ fromPath: redirect[0], toPath: redirect[1], isPermanent: true });
+  }
+
 }

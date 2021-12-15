@@ -1,4 +1,4 @@
-FROM unocha/debian-base:9
+FROM public.ecr.aws/unocha/debian-snap-base:12-debian
 
 WORKDIR /srv/www
 
@@ -10,15 +10,18 @@ RUN apt-get -qy update && \
         build-essential \
         curl \
         git \
+        libglu1 \
+        libxi6 \
         net-tools \
         rsync \
         software-properties-common && \
-    curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
-    apt-get install -qy nodejs && \
-    npm install -g yarn && \
-    yarn && \
-    yarn cache clean && \
-    apt-get -qy remove build-essential && \
+    npm install && \
+    # seriosly, we need 2.0.1 or it breaks
+    npm install gatsby-source-filesystem@2.0.1 && \
+    apt-get -qy remove \
+        build-essential \
+        libglu1 \
+        libxi6 && \
     apt-get -qy autoremove && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /root/.npm

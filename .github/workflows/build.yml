@@ -45,12 +45,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: public.ecr.aws/unocha/hdx-gislayer:${{ steps.tag_info.outputs.IMAGE_TAG }}
-
-      - name: Build, tag, and push gisworker image to Amazon ECR
-        uses: docker/build-push-action@v2
-        with:
-          context: docker/gisworker
-          build-args: IMAGE_TAG=${{ steps.tag_info.outputs.IMAGE_TAG }}
-          push: true
           tags: public.ecr.aws/unocha/hxl-gatsby:${{ steps.tag_info.outputs.IMAGE_TAG }}

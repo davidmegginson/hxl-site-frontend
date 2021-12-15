@@ -1,0 +1,9 @@
+version: '2.2'
+
+services:
+  gatsby:
+    image: public.ecr.aws/unocha/hxl-gatsby:${IMAGE_TAG:-dev}
+    entrypoint: /bin/bash
+    env_file:
+      - ".env.development"
+      - ".env.production"

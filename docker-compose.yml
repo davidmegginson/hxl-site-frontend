@@ -2,7 +2,7 @@ version: '2.1'
 
 services:
   gatsby:
-    image: unocha/hxl-gatsby:dev
+    build: .
     entrypoint: sleep 14400
     volumes:
       - "./:/srv/www"

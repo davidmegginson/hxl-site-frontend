@@ -36,9 +36,6 @@ class OCHAHeader extends Component{
                       <a href="https://centre.humdata.org/" target="_blank" rel="noopener noreferrer">Centre for Humanitarian Data</a>
                     </li>
                     <li>
-                      <a href="https://tools.humdata.org/" target="_blank" rel="noopener noreferrer">HDX Tools</a>
-                    </li>
-                    <li>
                       <a href="https://data.humdata.org/" target="_blank" rel="noopener noreferrer">Humanitarian Data Exchange</a>
                     </li>
                   </ul>
